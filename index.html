@@ -14,9 +14,9 @@ function gup( name, url ) {
   var results = regex.exec( url );
   return results == null ? null : results[1];
 }
-var kindlyfireproxy = 'https://proxy1.zn.kindlyfire.me/'
-var bitnoproxy = 'http://bit.no.com:43110/'
-var onlyzeroproxy = 'https://onlyzero.net/'
+var proxy1 = 'https://proxy1.zn.kindlyfire.me/'
+var proxy2 = 'http://bit.no.com:43110/'
+var proxy3 = 'https://onlyzero.net/'
 
 var siteindex = 'data.txt'
 var url = '/'
@@ -60,6 +60,10 @@ function selectSearch(selected, u = "") {
 
     var loadurl = selected.value;
     sname = selected.options[selected.selectedIndex].innerHTML;
+    if(selected.value == "userdata.txt")
+      zeromesearch = true;
+    else
+      zeromesearch = false;
     if(selected.value == "externalsource")
     {
 
@@ -169,7 +173,10 @@ function search(){
       if(addrank.length <= 1)
         var addrank = [data[1],'-'];
       var desc = data[0].split("[");
-      var str = ["<div class='entry'><span class='siterank'>",addrank[1],"<br><c>peers</c></span> <span class='resentry'><a class='sitelink' href='", url, addrank[0], "' target='_top'>", desc[0], "</a> <span class='proxies'>Proxies: <a id='kfp' class='proxylink' href='",kindlyfireproxy,addrank[0],"' target='_top'>K</a><a id='bnp' class='proxylink' href='",bitnoproxy,addrank[0],"' target='_top'>B</a><a id='wwp' class='proxylink' href='",onlyzeroproxy,addrank[0],"' target='_top'>O</a></span>~",desc[1],"`</span></div>"];//.join("");
+      if(zeromesearch)
+        addrank[0] = "Me.ZeroNetwork.bit/?Profile/"+addrank[0];
+
+      var str = ["<div class='entry'><span class='siterank'>",addrank[1],"<br><c>peers</c></span> <span class='resentry'><a class='sitelink' href='", url, addrank[0], "' target='_top'>", desc[0], "</a> <span class='proxies'>Proxies: <a id='kfp' class='proxylink' href='",proxy1,addrank[0],"' target='_top'>1</a><a id='bnp' class='proxylink' href='",proxy2,addrank[0],"' target='_top'>2</a><a id='wwp' class='proxylink' href='",proxy3,addrank[0],"' target='_top'>3</a></span>~",desc[1],"`</span></div>"];//.join("");
       urldata.push(str);
       //document.getElementById("results").innerHTML+="<a href='"+url+data[1]+"' target='_top'>" + desc[0]+" </a> - ";
       //document.getElementById("results").innerHTML+="~"+desc[1]+"`\n";
@@ -263,10 +270,12 @@ function displayResults(newpage, retmax)
   $("#results").html($("#results").html().replace(/`/g,"</span><c><br><br></c>"));
 
   //Discover Mode / Tags
+  if(zeromesearch == false)
+  {
   var elements = document.getElementsByClassName('tags');
   for(var e = 0; e < elements.length; e++)
     elements[e].innerHTML = elements[e].innerHTML.replace(/ ?(.+?)(,|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1</span> ")
-
+  }
 
   if($('#pagenum') != null)
     $('#pagenum').html(page+1);
@@ -342,6 +351,7 @@ function randomsearch()
       <script>document.write('<option value="'+url+'1LC3ryygCrv94ZK4Nk8ELW6vE1hKwopE8T/data.txt">CensoredSearch</option>')</script>
       <script>document.write('<option value="'+url+'1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F/data/names.json">ZeroName</option>')</script>
       <option value="zeromehubs.txt">ZeroMe Hubs</option>
+      <option value="userdata.txt">ZeroMe Users</option>
       <option value="externalsource">Custom/Other</option>
     </select>
     <br><br>
