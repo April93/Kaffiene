@@ -14,9 +14,12 @@ function gup( name, url ) {
   var results = regex.exec( url );
   return results == null ? null : results[1];
 }
-var proxy1 = 'https://proxy1.zn.kindlyfire.me/'
-var proxy2 = 'http://bit.no.com:43110/'
-var proxy3 = 'https://onlyzero.net/'
+var proxy1 = 'http://bit.surf:43110/'
+var proxy2 = 'https://zero.arukascloud.io/'
+var proxy3 = 'https://fuckcf.cf/'
+var proxy4 = 'https://proxy1.zeronet.functor.xyz:10443/'
+var proxy5 = 'https://proxy.th3nd.com/'
+var proxy6 = 'https://zero.acelewis.com/'
 
 var siteindex = 'data.txt'
 var url = '/'
@@ -56,6 +59,7 @@ xmlhttp.open("GET",siteindex,false);
 xmlhttp.send();
 
 var sname = ""
+var zeromesearch = false;
 function selectSearch(selected, u = "") {
 
     var loadurl = selected.value;
