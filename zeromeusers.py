@@ -3,7 +3,7 @@ import sqlite3
 import json
 import re
 
-newsitesdb = '../1MEaLzSbzXmStAowrivK1Vu4iSEWLxgZLJ/merged-ZeroMe/ZeroMe.db'
+newsitesdb = '../1MeFqFfFFGQfa1J3gJyYYUvb5Lksczq7nH/merged-ZeroMe/ZeroMe.db'
 
 conn = sqlite3.connect(newsitesdb)
 c = conn.cursor()

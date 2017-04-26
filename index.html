@@ -184,7 +184,7 @@ function search(){
         addrank[0] = "Me.ZeroNetwork.bit/?Profile/"+addrank[0];
         idnamearr = desc[0].split("-")
         desc[0] = idnamearr[1]
-        profilename = "<br><span class='usercertresult'>"+idnamearr[0]+"<br>Auth_Address:"+hubauth[1]+"<br>Hub:"+hubauth[0]+"</span>"//.replace(/@zeroid.bit/gi,"@zid").replace(/@kaffie.bit/gi,"@kfid")+"<br>"
+        profilename = "<br><span class='usercertresult'>"+idnamearr[0]+"<br>Auth_Address:"+hubauth[1]+"<br>Hub:<span class=\"tag\" onclick=\"searchphrase('"+hubauth[0]+"')\">"+hubauth[0]+"</span></span>"//.replace(/@zeroid.bit/gi,"@zid").replace(/@kaffie.bit/gi,"@kfid")+"<br>"
       }
 
       var str = ["<div class='entry'><span class='siterank'>",addrank[1],"<br><c>peers</c></span> <span class='resentry'><a class='sitelink' href='", url, addrank[0], "' target='_top'>", desc[0], "</a> <span class='proxies'><a id='kfp' class='proxylink' href='",proxy1,addrank[0],"' target='_top'>1</a><a id='bnp' class='proxylink' href='",proxy2,addrank[0],"' target='_top'>2</a><a id='wwp' class='proxylink' href='",proxy3,addrank[0],"' target='_top'>3</a></span>", profilename, "<br><span class='tags'>", desc[1], "</span></span></div>"];

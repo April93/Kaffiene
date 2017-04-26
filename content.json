@@ -4,6 +4,10 @@
  "description": "Caffeinated Search & Index",
  "domain": "kaffiene.bit",
  "files": {
+  "README.md": {
+   "sha512": "611bb96b1a5244f26585d6f2fc3e553fb2344f13eb7587da8bdcb1a511760d49",
+   "size": 11
+  },
   "autotag.py": {
    "sha512": "7a4f87fd51e45031548bc6b060519ab8f93eb88e4df78be473a9edebde5dfcd9",
    "size": 11574
@@ -13,8 +17,8 @@
    "size": 838
   },
   "css/all.css": {
-   "sha512": "212f83ad83fe6493820ed042c5dd2c466e752591130de7346d8f104c9147d4e7",
-   "size": 42871
+   "sha512": "ca80d801e5e23798249cead7ad08b594f9f4af8df07bbe05f10720a4558cacd5",
+   "size": 42929
   },
   "data.txt": {
    "sha512": "dd99a79aae8076487a7f9896353b0192b54ad68620e8c00f07588470c3b57597",
@@ -25,8 +29,8 @@
    "size": 1608
   },
   "index.html": {
-   "sha512": "39e6222460fbe492176f01e684fd5680364836d314e94244d3fc1506843cd1f0",
-   "size": 12808
+   "sha512": "b992e86e73ba0ae01fc48f74be8df628fffc5773bd2fe8cc70dfc226b705d4fd",
+   "size": 13713
   },
   "install.html": {
    "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
@@ -60,25 +64,33 @@
    "sha512": "6fc9a44fec8ed42db055c04bd8a0a6d55b0ec694ed57afa96ce49cefa99e627f",
    "size": 3990
   },
+  "userdata.txt": {
+   "sha512": "6c477ad09c58c1dcc9c675868828ab1942f6bd8351120f55aa96454bfc95a162",
+   "size": 776376
+  },
   "zeromehubs.txt": {
-   "sha512": "e7d8de15f01fb7d504083f8d11308c8c981a364ebb4d1dd62eb782a8b67ab27b",
-   "size": 620
+   "sha512": "828d7b517799ea62e041371aad10bfdcfa431af3f568bb53e1181f26efb3fbba",
+   "size": 1314
+  },
+  "zeromeusers.py": {
+   "sha512": "409e308ecc6d020fe4c0db5d2332d24469951e2e957ac0aa87a49d9ff456d664",
+   "size": 1255
   }
  },
- "ignore": "((js|css)/(?!all.(js|css))|data/.*db|data/users/.*/.*)",
+ "ignore": "(.git|data/.*db|data/users/.*/.*)",
  "includes": {},
  "inner_path": "content.json",
- "modified": 1482389735.449978,
+ "modified": 1493184229,
  "postmessage_nonce_security": true,
  "sign": [
-  27691485265971468059092104523533918932178742607184132449074910558621296303502,
-  57278731371206521400782117587694733797633766372350929287426765251356951789535
+  45944759094578535524524696081179451491303504401317672485814879188151322222053,
+  9019221376904222510086725320724620299546691276808303476529332818474847780605
  ],
  "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
  "signs": {
-  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "G1WzwoxsQkxAagzGAmwHvYmSpaV9TVnobYba6rLlwlLcAdN/EtAFy1Rieo/6fdSps88pH/xcybvYNlYMIoEMyJo="
+  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HCj28Ti9HV4wEqs+FtfFNSgGjo70xkyIVO2GPjts29rxVIhyXS9GjBPYjESTWvsWEw7t8TtO5xRt4kDJqChTZIU="
  },
  "signs_required": 1,
  "title": "Kaffiene Search",
- "zeronet_version": "0.5.1"
+ "zeronet_version": "0.5.4"
 }
