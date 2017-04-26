@@ -115,6 +115,11 @@ c{font-size: 45%;}
   float:right;
   width:85%;
 }
+.usercertresult
+{
+  font-size: 50%;
+  margin-top: -10%;
+}
 
 
 input+div{display:none;}
