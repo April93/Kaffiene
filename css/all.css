@@ -120,6 +120,10 @@ c{font-size: 45%;}
   font-size: 50%;
   margin-top: -10%;
 }
+.wikitext
+{
+  font-size:50%;
+}
 
 
 input+div{display:none;}

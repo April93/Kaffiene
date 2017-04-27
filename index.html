@@ -5,6 +5,8 @@
 <!--<script type="text/javascript" src="js/all.js" async></script>-->
 <style>h1, h2, h3, h4 { font-weight: normal; font-size: 100px; margin: 0px; padding: 0px }</style>
 <script src="jquery-3.1.0.min.js"></script>
+<script src="sql.js"></script>
+<script src="marked.min.js"></script>
 <script>
 function gup( name, url ) {
   if (!url) url = location.href;
@@ -57,6 +59,85 @@ xmlhttp.onreadystatechange=function()
 }
 xmlhttp.open("GET",siteindex,false);
 xmlhttp.send();
+
+lastdbquery = ""
+var db = null
+var xhr = new XMLHttpRequest();
+  xhr.open('GET', url+'138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/data/ZeroWiki.db', true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    var uInt8Array = new Uint8Array(this.response);
+    db = new SQL.Database(uInt8Array);
+    fetchfromdb(lastdbquery)
+  };
+  xhr.send();
+
+lastslug = ""
+var result = "";
+var searchterm = "";
+function searchphrase(t){}
+function fetchfromdb()
+{
+  fetchfromdb(searchterm)
+}
+function fetchfromdb(query)
+{
+  query = query.toLowerCase()
+  lastdbquery = query
+  if(db == null || query == "" || query == " " || query == null || zeromesearch)
+  {
+    lastslug = "";
+    result = "";
+    refreshDisplay()
+    return result;
+  }
+  query = query.replace(/ /g,'-')
+  query = query.replace(/\./g, '')
+  var direct = db.exec('SELECT body, slug FROM pages WHERE slug == \''+query+'\' ORDER BY date_added desc LIMIT 1');
+  var similar = db.exec('SELECT body, slug FROM pages WHERE slug LIKE \'%'+query+'%\' ORDER BY slug asc, date_added desc LIMIT 1');
+    // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+    var text = ""
+    var pagename = ""
+
+  if(direct[0])
+  {
+    text = direct[0].values[0][0]
+    pagename = direct[0].values[0][1]
+  }
+  else if(similar[0])
+  {
+    text = similar[0].values[0][0]
+    pagename = similar[0].values[0][1]
+    if(pagename == lastslug)
+    {
+      return result;
+    }
+  }
+  else
+  {
+    result = ""
+    refreshDisplay()
+    return result;
+  }
+    result = ""
+    lastslug = pagename
+    
+    var myRe = /(?:^|\n)([^\#\-\=]|(?:.{10,}\.|\?|.{50,}))(?:\n|$)/g;///(?:^|\n)([^\#\-\=].+)(?:\n|$)/g;
+    var myArray;
+    myArray = myRe.exec(text)
+    if(myArray != null)
+      bdy = myArray[0]
+    else
+      bdy = text
+    //(?:^|\n)([^\#\-\=]|(?:.{10,}\.|.{50,}))(?:\n|$)
+    if(bdy.length >= 1000)
+      bdy = bdy.substr(0,1000)
+
+    wiki = marked(bdy).replace(/\[\[?(.+?)?(?:\|(.+?))?(?:\]\]|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1|$2</span>").replace(/>#(?:[^<]+?\|)([^<]+)</g, ">#$1<").replace(/>#([^<]+?)\|</g,">#$1<")
+    result = "<span class='entry'><span class='wiki'><span class='wikititle'><b><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/?Page:"+pagename+"'>"+pagename+"</a></b></span><br><span class='wikitext'>"+wiki+"</span></span></span>";
+    refreshDisplay()
+  return result;
+}
 
 var sname = ""
 var zeromesearch = false;
@@ -153,7 +234,7 @@ function search(){
 
   //Split the search term for easier searching
   sra=[];
-  var searchterm = $("#sr").val();
+  searchterm = $("#sr").val();
   var sra = searchterm.toLowerCase().split(" ");
 
   //Loop through sites
@@ -200,6 +281,8 @@ function search(){
   urldata.sort(sortrank);
 
   //urldata.length
+  //fetchfromdb(searchterm)
+
   displayResults(page, retmax);
 
   //Display number of results
@@ -222,6 +305,8 @@ function displayResults(newpage, retmax)
   page = newpage;
   $("#results").html("");
   $("#pages").html("");
+
+  $("#results").append(result);
 
   for(var d = page*retmax; d < (page*retmax)+retmax; d++)
   {
@@ -297,6 +382,7 @@ function displayResults(newpage, retmax)
 function searchphrase(text)
 {
   $("#sr").val(text);
+  fetchfromdb(text);
   search();
 }
 
@@ -383,6 +469,18 @@ function randomsearch()
 $('#sr').focus()
 document.getElementById('sr').onkeyup = function(e){ search(); }
 document.getElementById('sr').onkeypress = function(e){ search(); }
+var timer;
+$('#sr').keypress(function(e){
+    //$('#result').text('Typing ...');
+    
+    // clear the timer as keys are still entered
+    if(timer) clearTimeout(timer);
+    
+    // setup the timer
+    timer = setTimeout(function(){
+        fetchfromdb(searchterm)
+    }, 100);
+});
 
 var s = gup('q',location.href)
 if(s != null)
