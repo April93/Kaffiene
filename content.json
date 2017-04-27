@@ -17,8 +17,8 @@
    "size": 838
   },
   "css/all.css": {
-   "sha512": "ca80d801e5e23798249cead7ad08b594f9f4af8df07bbe05f10720a4558cacd5",
-   "size": 42929
+   "sha512": "bde148111b008c699c78f44f21ed03497d4d04a97444e7c1781ea1660ce27f8d",
+   "size": 43007
   },
   "data.txt": {
    "sha512": "dd99a79aae8076487a7f9896353b0192b54ad68620e8c00f07588470c3b57597",
@@ -29,8 +29,8 @@
    "size": 1608
   },
   "index.html": {
-   "sha512": "b992e86e73ba0ae01fc48f74be8df628fffc5773bd2fe8cc70dfc226b705d4fd",
-   "size": 13713
+   "sha512": "d4b5617bbcb0d2ddc06b34ffb9ec31a90952d9c194492b29681e2f6040edf548",
+   "size": 16848
   },
   "install.html": {
    "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
@@ -39,6 +39,10 @@
   "jquery-3.1.0.min.js": {
    "sha512": "ab3ad9a98fe431508461ebbf8029bc536f34d16cfef8b4c62b8a62b56fe2b30a",
    "size": 86351
+  },
+  "marked.min.js": {
+   "sha512": "9e60e8266e2bab250f092f33fce834438f98f1f3f0d96c3325ddbf224916cfd5",
+   "size": 19513
   },
   "merge.py": {
    "sha512": "822ed76b259a13070ff09417c09f2c01046831ff1db2489da3dce38092ade837",
@@ -64,6 +68,10 @@
    "sha512": "6fc9a44fec8ed42db055c04bd8a0a6d55b0ec694ed57afa96ce49cefa99e627f",
    "size": 3990
   },
+  "sql.js": {
+   "sha512": "9ae5d77573b5b79aeb644dbe095db063ed4e8daa7f408c53651aa1c8def304eb",
+   "size": 2095288
+  },
   "userdata.txt": {
    "sha512": "6c477ad09c58c1dcc9c675868828ab1942f6bd8351120f55aa96454bfc95a162",
    "size": 776376
@@ -80,15 +88,15 @@
  "ignore": "(.git|data/.*db|data/users/.*/.*)",
  "includes": {},
  "inner_path": "content.json",
- "modified": 1493184421,
+ "modified": 1493274144,
  "postmessage_nonce_security": true,
  "sign": [
-  113334184679942964794407110805176809978687073250626490147312750391483978907754,
-  63839101849510038659221070134933363578906264619581479896887615841066277537987
+  101954142027320752027990522978879276303812992147362627096886231730854089046936,
+  27062909336676162113084475877192034250368933113199477463834765356751459462
  ],
  "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
  "signs": {
-  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "GwJNgFti4wSawmK6OCP9K9Gw92KjOLjsKKozZV29AX7EHXSoyH/Va3Jh06+9JiyMzFy3sviT8WUhH0oJkgTVkes="
+  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HCIhGiZeyijymZQcW7p0Tj1Nd7g1MkR/AsYvu1ZK2ZbWJNe5iQ2J13NqDs5sRAlo7RlqOO8qy+889v7WVMdI3QM="
  },
  "signs_required": 1,
  "title": "Kaffiene Search",

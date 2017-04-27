@@ -134,12 +134,12 @@ function fetchfromdb(query)
       bdy = bdy.substr(0,1000)
 
     wiki = marked(bdy).replace(/\[\[?(.+?)?(?:\|(.+?))?(?:\]\]|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1|$2</span>").replace(/>#(?:[^<]+?\|)([^<]+)</g, ">#$1<").replace(/>#([^<]+?)\|</g,">#$1<")
-    result = "<span class='entry'><span class='wiki'><span class='wikititle'><b><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/?Page:"+pagename+"'>"+pagename+"</a></b></span><br><span class='wikitext'>"+wiki+"</span></span></span>";
+    result = "<span class='entry'><span class='wiki'><span class='wikititle'><b><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/?Page:"+pagename+"'>"+pagename+"</a></b></span><span class='wikilogo'><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP'>ZeroWiki</a></span><br><span class='wikitext'>"+wiki+"</span></span></span>";
     refreshDisplay()
   return result;
 }
 
-var sname = ""
+var sname = "Kaffiene"
 var zeromesearch = false;
 function selectSearch(selected, u = "") {
 
@@ -163,6 +163,8 @@ function selectSearch(selected, u = "") {
       datau = datab;
       $('#curindex').html(datau.length + " <a href=\"data.txt\" target='_top'>sites</a> and growing");
       search();
+      lastslug="";
+        fetchfromdb(searchterm);
       return;
     }
     var xhr = new XMLHttpRequest();
@@ -190,6 +192,8 @@ function selectSearch(selected, u = "") {
 
         $('#curindex').html("~"+datau.length + " sites loaded from "+sname);
         search();
+        lastslug="";
+        fetchfromdb(searchterm);
     };
     xhr.send();
 }

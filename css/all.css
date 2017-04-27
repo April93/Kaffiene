@@ -124,6 +124,11 @@ c{font-size: 45%;}
 {
   font-size:50%;
 }
+.wikilogo
+{
+  font-size:40%;
+  float: right;
+}
 
 
 input+div{display:none;}
