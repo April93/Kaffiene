@@ -156,8 +156,16 @@ function selectSearch(selected, u = "") {
         var loadurl = prompt("Enter the URL to the index you wish to use:", "URL");
       else
         loadurl = u;
+      if(loadurl == "followers")
+        loadurl = "followers.txt"
       sname = loadurl;
+      
     }
+    
+
+    if(sname == "followers.txt")
+      zeromesearch = true;
+
     if (sname == "Kaffiene")
     {
       datau = datab;

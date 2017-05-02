@@ -9,7 +9,7 @@ conn = sqlite3.connect(newsitesdb)
 c = conn.cursor()
 
 followdict = {}
-for row in c.execute('SELECT user_name, hub||"/"||auth_address, count(hub||"/"||auth_address) FROM follow GROUP by hub||"/"||auth_address ORDER BY count(hub||"/"||auth_address) desc'):
+for row in c.execute('SELECT user_name, auth_address, count(auth_address) FROM follow GROUP by auth_address ORDER BY count(auth_address) desc'):
 	followdict[row[1]] = row[2]
 
 f = open("userdata.txt","w")
@@ -36,7 +36,6 @@ for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM
 		intro = re.sub(r'\n.+', '', intro)
 		intro = re.sub(r'(?is)\((http|\/|\.).+\)', '', intro)
 		intro = re.sub(r'(?is)http.+\/', '', intro)
-		#intro = intro.replace('http.+(\/|\))','')
 		intro = intro.replace(':','')
 		intro = intro.replace('[','')
 		intro = intro.replace(']','')
@@ -44,10 +43,8 @@ for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM
 		f.write(intro)
 	f.write(":")
 	if row[1] and row[2]:
-		#"Me.ZeroNetwork.bit/?Profile/"+
 		link = row[1]+"/"+row[2].replace('data/users/','')
 		f.write(link)
-		f.write(" "+str(followdict.get(link,'-')))
+		f.write(" "+str(followdict.get(row[2].replace('data/users/',''),'-')))
 	f.write("\n")
-
 f.close()
