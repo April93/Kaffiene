@@ -24,13 +24,17 @@
    "sha512": "dd99a79aae8076487a7f9896353b0192b54ad68620e8c00f07588470c3b57597",
    "size": 106625
   },
+  "followers.txt": {
+   "sha512": "4ffbb78f27b6793141fe4ca8c61ea1f24342579a47a99c15013599411dad8f7e",
+   "size": 69058
+  },
   "grab.py": {
    "sha512": "7b6ff5a800bea2fbbddeb0dc0a6b2fc935b245231d41400d494ba45148ebfb8b",
    "size": 1608
   },
   "index.html": {
-   "sha512": "d4b5617bbcb0d2ddc06b34ffb9ec31a90952d9c194492b29681e2f6040edf548",
-   "size": 16848
+   "sha512": "a149b6b9294f7be76ea29e87f889f2f9c8e2438062171e21621b013bda5899be",
+   "size": 16997
   },
   "install.html": {
    "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
@@ -73,30 +77,34 @@
    "size": 2095288
   },
   "userdata.txt": {
-   "sha512": "6c477ad09c58c1dcc9c675868828ab1942f6bd8351120f55aa96454bfc95a162",
-   "size": 776376
+   "sha512": "5e57954cd8af405d7bed32b2e17ef2de52d91fc21634000803f53498e7ae39bb",
+   "size": 805234
+  },
+  "zeromefollow.py": {
+   "sha512": "4dbbbbf92b10127f73ab4214463a1c6413335c4d3d40a5d8b6ef76e9851c6ec0",
+   "size": 2199
   },
   "zeromehubs.txt": {
    "sha512": "828d7b517799ea62e041371aad10bfdcfa431af3f568bb53e1181f26efb3fbba",
    "size": 1314
   },
   "zeromeusers.py": {
-   "sha512": "409e308ecc6d020fe4c0db5d2332d24469951e2e957ac0aa87a49d9ff456d664",
-   "size": 1255
+   "sha512": "802eae7ddf30c8c1207d80f95595619b205bb11f4f8ab6064e8f8249bc1915a9",
+   "size": 1791
   }
  },
  "ignore": "(.git|data/.*db|data/users/.*/.*)",
  "includes": {},
  "inner_path": "content.json",
- "modified": 1493274144,
+ "modified": 1493705918,
  "postmessage_nonce_security": true,
  "sign": [
-  101954142027320752027990522978879276303812992147362627096886231730854089046936,
-  27062909336676162113084475877192034250368933113199477463834765356751459462
+  11672426722106051571304662585458575762894743818621210548457239059123476746591,
+  34903361924954812348985367971566069477715070068399661096182359865420308832790
  ],
  "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
  "signs": {
-  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HCIhGiZeyijymZQcW7p0Tj1Nd7g1MkR/AsYvu1ZK2ZbWJNe5iQ2J13NqDs5sRAlo7RlqOO8qy+889v7WVMdI3QM="
+  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HKklt0MioId4h/+P7rlaXW+AoZ+spzbIJTvslNvKz1QVRgNdFArYtG6FESbPjVx5CmMLXK3DUQgG5SbTAG9KSr4="
  },
  "signs_required": 1,
  "title": "Kaffiene Search",

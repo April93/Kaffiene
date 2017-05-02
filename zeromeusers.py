@@ -3,19 +3,23 @@ import sqlite3
 import json
 import re
 
-newsitesdb = '../1MeFqFfFFGQfa1J3gJyYYUvb5Lksczq7nH/merged-ZeroMe/ZeroMe.db'
+zeromedb = '../1MeFqFfFFGQfa1J3gJyYYUvb5Lksczq7nH/merged-ZeroMe/ZeroMe.db'
 
-conn = sqlite3.connect(newsitesdb)
+conn = sqlite3.connect(zeromedb)
 c = conn.cursor()
 
+#Get approximate number of followers for every user
 followdict = {}
 for row in c.execute('SELECT user_name, auth_address, count(auth_address) FROM follow GROUP by auth_address ORDER BY count(auth_address) desc'):
 	followdict[row[1]] = row[2]
 
+#Pull list of unique users
 f = open("userdata.txt","w")
 for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM json WHERE hub IS NOT null and site==hub'):
 	if row[0]:
 		f.write(row[0])
+
+	#Name formatting/cleanup
 	if row[3]:
 		name = row[3].encode("UTF-8")
 		name = name.replace(':','')
@@ -26,6 +30,8 @@ for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM
 			name = name[:34]+"..."
 		f.write(" - "+name)
 	f.write("[")
+
+	#Intro formatting/cleanup
 	if row[4]:
 		intro = row[4].encode("UTF-8")
 		intro = re.sub(r"^Random ZeroNet user$","",intro)
@@ -42,6 +48,8 @@ for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM
 		intro = intro.replace("\n","")
 		f.write(intro)
 	f.write(":")
+	
+	#Generate ZeroMe link
 	if row[1] and row[2]:
 		link = row[1]+"/"+row[2].replace('data/users/','')
 		f.write(link)
