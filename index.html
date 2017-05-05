@@ -83,6 +83,9 @@ function fetchfromdb()
 function fetchfromdb(query)
 {
   query = query.toLowerCase()
+  if(query == "proxy")
+    query = "proxies"
+
   lastdbquery = query
   if(db == null || query == "" || query == " " || query == null || zeromesearch)
   {
@@ -115,6 +118,7 @@ function fetchfromdb(query)
   }
   else
   {
+    lastslug = ""
     result = ""
     refreshDisplay()
     return result;
@@ -123,17 +127,37 @@ function fetchfromdb(query)
     lastslug = pagename
     
     var myRe = /(?:^|\n)([^\#\-\=]|(?:.{10,}\.|\?|.{50,}))(?:\n|$)/g;///(?:^|\n)([^\#\-\=].+)(?:\n|$)/g;
-    var myArray;
-    myArray = myRe.exec(text)
-    if(myArray != null)
-      bdy = myArray[0]
+
+    if(lastslug == "proxies")
+    {
+      var myRe = /- (https?:\/\/.+?(?:\/|\n| ))/g;
+      var cut = /## List of meta proxies/gi;
+      var myArray;
+      myArray = cut.exec(text)
+      bdy = text.substr(0,myArray.index)
+      myArray = []
+      txt = ""
+      while ((myArray = myRe.exec(bdy)) !== null)
+      {
+        txt += myArray[0]+"\n"
+      }
+      bdy = txt
+    }
     else
-      bdy = text
-    //(?:^|\n)([^\#\-\=]|(?:.{10,}\.|.{50,}))(?:\n|$)
-    if(bdy.length >= 1000)
-      bdy = bdy.substr(0,1000)
+    {
+      var myArray;
+      myArray = myRe.exec(text)
+      if(myArray != null)
+        bdy = myArray[0]
+      else
+        bdy = text
+      //(?:^|\n)([^\#\-\=]|(?:.{10,}\.|.{50,}))(?:\n|$)
+      if(bdy.length >= 1000 && lastslug)
+        bdy = bdy.substr(0,1000)
+    }
 
     wiki = marked(bdy).replace(/\[\[?(.+?)?(?:\|(.+?))?(?:\]\]|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1|$2</span>").replace(/>#(?:[^<]+?\|)([^<]+)</g, ">#$1<").replace(/>#([^<]+?)\|</g,">#$1<")
+    wiki = wiki.replace("href=\"/","href=\""+url)
     result = "<span class='entry'><span class='wiki'><span class='wikititle'><b><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/?Page:"+pagename+"'>"+pagename+"</a></b></span><span class='wikilogo'><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP'>ZeroWiki</a></span><br><span class='wikitext'>"+wiki+"</span></span></span>";
     refreshDisplay()
   return result;
@@ -394,8 +418,11 @@ function displayResults(newpage, retmax)
 function searchphrase(text)
 {
   $("#sr").val(text);
-  fetchfromdb(text);
   search();
+  if(zeromesearch == false)
+  {
+  fetchfromdb(searchterm);
+  }
 }
 
 function randomsearch()
@@ -413,12 +440,20 @@ function randomsearch()
     var term = tags[Math.floor(Math.random() * tags.length)].replace(" ","");
     $("#sr").val(term);
     search();
+    if(zeromesearch == false)
+    {
+    fetchfromdb(searchterm);
+    }
   }
   else if(nametags.length != 0)
   {
     var term = nametags[Math.floor(Math.random() * nametags.length)].replace(" ","");
     $("#sr").val(term);
     search();
+    if(zeromesearch == false)
+    {
+    fetchfromdb(searchterm);
+    }
   }
   else {
     randomsearch();
@@ -480,9 +515,9 @@ function randomsearch()
 <script>
 $('#sr').focus()
 document.getElementById('sr').onkeyup = function(e){ search(); }
-document.getElementById('sr').onkeypress = function(e){ search(); }
+document.getElementById('sr').onkeydown = function(e){ search(); }
 var timer;
-$('#sr').keypress(function(e){
+$('#sr').keydown(function(e){
     //$('#result').text('Typing ...');
     
     // clear the timer as keys are still entered

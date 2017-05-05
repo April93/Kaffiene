@@ -5,8 +5,8 @@
  "domain": "kaffiene.bit",
  "files": {
   "README.md": {
-   "sha512": "611bb96b1a5244f26585d6f2fc3e553fb2344f13eb7587da8bdcb1a511760d49",
-   "size": 11
+   "sha512": "576ca8b23317231db34eb4d5a467ea7541b2a7b845da73f00afe60dfd234d334",
+   "size": 180
   },
   "autotag.py": {
    "sha512": "7a4f87fd51e45031548bc6b060519ab8f93eb88e4df78be473a9edebde5dfcd9",
@@ -33,8 +33,8 @@
    "size": 1608
   },
   "index.html": {
-   "sha512": "a149b6b9294f7be76ea29e87f889f2f9c8e2438062171e21621b013bda5899be",
-   "size": 16997
+   "sha512": "6663e94b683478ec9152e8c263975ec19efe0a498f4abf5c8d295415977f86b7",
+   "size": 17756
   },
   "install.html": {
    "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
@@ -96,15 +96,15 @@
  "ignore": "(.git|data/.*db|data/users/.*/.*)",
  "includes": {},
  "inner_path": "content.json",
- "modified": 1493705918,
+ "modified": 1493989972,
  "postmessage_nonce_security": true,
  "sign": [
-  11672426722106051571304662585458575762894743818621210548457239059123476746591,
-  34903361924954812348985367971566069477715070068399661096182359865420308832790
+  51298314188962905013672710828286982881884614610954411507840163159211248200738,
+  6571567384748546023073783825812484205802467730051363508097919024949392333296
  ],
  "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
  "signs": {
-  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HKklt0MioId4h/+P7rlaXW+AoZ+spzbIJTvslNvKz1QVRgNdFArYtG6FESbPjVx5CmMLXK3DUQgG5SbTAG9KSr4="
+  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "G+t96PRPP+KZ5+x3WbKd9CfG90Wx0B57Zw4jsHh0oMAcWMYVB5TWF9NV2HjhIUCANtOVa9vqsfCLtO/xf/RtZqA="
  },
  "signs_required": 1,
  "title": "Kaffiene Search",
