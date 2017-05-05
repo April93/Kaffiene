@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+  <ShortName>Kaffiene</ShortName>
+  <Description>search engine on zeronet</Description>
+  <InputEncoding>UTF-8</InputEncoding>
+  <LongName>Kaffie's ZeroNet Search Engine</LongName>
+  <Url type="text/html" method="get" 
+template="http://127.0.0.1:43110/1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba/?q={searchTerms}"/>
+</OpenSearchDescription>

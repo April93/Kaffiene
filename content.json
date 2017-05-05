@@ -1,0 +1,112 @@
+{
+ "address": "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba",
+ "cloneable": true,
+ "description": "Caffeinated Search & Index",
+ "domain": "kaffiene.bit",
+ "files": {
+  "README.md": {
+   "sha512": "611bb96b1a5244f26585d6f2fc3e553fb2344f13eb7587da8bdcb1a511760d49",
+   "size": 11
+  },
+  "autotag.py": {
+   "sha512": "7a4f87fd51e45031548bc6b060519ab8f93eb88e4df78be473a9edebde5dfcd9",
+   "size": 11574
+  },
+  "check.py": {
+   "sha512": "db7d66aff3c6b9a3fa6fde7b8561228b3433f6a96df6537358f0edbc16008f2e",
+   "size": 838
+  },
+  "css/all.css": {
+   "sha512": "bde148111b008c699c78f44f21ed03497d4d04a97444e7c1781ea1660ce27f8d",
+   "size": 43007
+  },
+  "data.txt": {
+   "sha512": "dd99a79aae8076487a7f9896353b0192b54ad68620e8c00f07588470c3b57597",
+   "size": 106625
+  },
+  "followers.txt": {
+   "sha512": "4ffbb78f27b6793141fe4ca8c61ea1f24342579a47a99c15013599411dad8f7e",
+   "size": 69058
+  },
+  "grab.py": {
+   "sha512": "7b6ff5a800bea2fbbddeb0dc0a6b2fc935b245231d41400d494ba45148ebfb8b",
+   "size": 1608
+  },
+  "index.html": {
+   "sha512": "a149b6b9294f7be76ea29e87f889f2f9c8e2438062171e21621b013bda5899be",
+   "size": 16997
+  },
+  "install.html": {
+   "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
+   "size": 1581
+  },
+  "jquery-3.1.0.min.js": {
+   "sha512": "ab3ad9a98fe431508461ebbf8029bc536f34d16cfef8b4c62b8a62b56fe2b30a",
+   "size": 86351
+  },
+  "marked.min.js": {
+   "sha512": "9e60e8266e2bab250f092f33fce834438f98f1f3f0d96c3325ddbf224916cfd5",
+   "size": 19513
+  },
+  "merge.py": {
+   "sha512": "822ed76b259a13070ff09417c09f2c01046831ff1db2489da3dce38092ade837",
+   "size": 1295
+  },
+  "mergeold.py": {
+   "sha512": "fbf763286f633f8892c83752cfaf19fa022832da59afcc5a4fbb666bed09041c",
+   "size": 906
+  },
+  "newsites.txt": {
+   "sha512": "c4ecd8f51974542471f550fa89a8617004ca059520dd2d525db140375c9b1998",
+   "size": 57076
+  },
+  "newsitesdb.py": {
+   "sha512": "667c90bf56e6b3aeb9fd0a004a0f19087d588ff4534a5e802d1cfcae6fa3c2f5",
+   "size": 1550
+  },
+  "opensearch.xml": {
+   "sha512": "2e0069e762a84916c51ca90749aadd1762f7c98048fda9300e13d6e4476f1cea",
+   "size": 439
+  },
+  "python.html": {
+   "sha512": "6fc9a44fec8ed42db055c04bd8a0a6d55b0ec694ed57afa96ce49cefa99e627f",
+   "size": 3990
+  },
+  "sql.js": {
+   "sha512": "9ae5d77573b5b79aeb644dbe095db063ed4e8daa7f408c53651aa1c8def304eb",
+   "size": 2095288
+  },
+  "userdata.txt": {
+   "sha512": "5e57954cd8af405d7bed32b2e17ef2de52d91fc21634000803f53498e7ae39bb",
+   "size": 805234
+  },
+  "zeromefollow.py": {
+   "sha512": "4dbbbbf92b10127f73ab4214463a1c6413335c4d3d40a5d8b6ef76e9851c6ec0",
+   "size": 2199
+  },
+  "zeromehubs.txt": {
+   "sha512": "828d7b517799ea62e041371aad10bfdcfa431af3f568bb53e1181f26efb3fbba",
+   "size": 1314
+  },
+  "zeromeusers.py": {
+   "sha512": "802eae7ddf30c8c1207d80f95595619b205bb11f4f8ab6064e8f8249bc1915a9",
+   "size": 1791
+  }
+ },
+ "ignore": "(.git|data/.*db|data/users/.*/.*)",
+ "includes": {},
+ "inner_path": "content.json",
+ "modified": 1493705918,
+ "postmessage_nonce_security": true,
+ "sign": [
+  11672426722106051571304662585458575762894743818621210548457239059123476746591,
+  34903361924954812348985367971566069477715070068399661096182359865420308832790
+ ],
+ "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
+ "signs": {
+  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HKklt0MioId4h/+P7rlaXW+AoZ+spzbIJTvslNvKz1QVRgNdFArYtG6FESbPjVx5CmMLXK3DUQgG5SbTAG9KSr4="
+ },
+ "signs_required": 1,
+ "title": "Kaffiene Search",
+ "zeronet_version": "0.5.4"
+}

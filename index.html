@@ -1,0 +1,524 @@
+<html>
+<head>
+<meta name="keywords" content="search, kaffie, kaffiene, find, zeronet, search engine, engine, zero, zerosearch">
+<meta charset="UTF-8">
+<!--<script type="text/javascript" src="js/all.js" async></script>-->
+<style>h1, h2, h3, h4 { font-weight: normal; font-size: 100px; margin: 0px; padding: 0px }</style>
+<script src="jquery-3.1.0.min.js"></script>
+<script src="sql.js"></script>
+<script src="marked.min.js"></script>
+<script>
+function gup( name, url ) {
+  if (!url) url = location.href;
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( url );
+  return results == null ? null : results[1];
+}
+var proxy1 = 'http://bit.surf:43110/'
+var proxy2 = 'https://zero.arukascloud.io/'
+var proxy3 = 'https://fuckcf.cf/'
+var proxy4 = 'https://proxy1.zeronet.functor.xyz:10443/'
+var proxy5 = 'https://proxy.th3nd.com/'
+var proxy6 = 'https://zero.acelewis.com/'
+
+var siteindex = 'data.txt'
+var url = '/'
+
+if(window.location.hostname == "search.kaffie.bit" || window.location.hostname == "kaffiene.bit"
+ || window.location.hostname == "zerosearch.bit" || window.location.hostname == "0search.bit")
+  url = "http://zero/"
+
+</script>
+<title>Kaffiene</title>
+  <link rel="stylesheet" href="css/all.css" />
+</head>
+<body>
+<script>
+var splash=true;
+//Grab the site information from data.txt.
+var datau;
+var datab;
+var xmlhttp;
+if (window.XMLHttpRequest)
+{
+  xmlhttp=new XMLHttpRequest();
+}
+else
+{
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+}
+xmlhttp.onreadystatechange=function()
+{
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+  {
+    datau=xmlhttp.responseText.split("\n");
+    datab=datau;
+  }
+}
+xmlhttp.open("GET",siteindex,false);
+xmlhttp.send();
+
+lastdbquery = ""
+var db = null
+var xhr = new XMLHttpRequest();
+  xhr.open('GET', url+'138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/data/ZeroWiki.db', true);
+  xhr.responseType = 'arraybuffer';
+  xhr.onload = function(e) {
+    var uInt8Array = new Uint8Array(this.response);
+    db = new SQL.Database(uInt8Array);
+    fetchfromdb(lastdbquery)
+  };
+  xhr.send();
+
+lastslug = ""
+var result = "";
+var searchterm = "";
+function searchphrase(t){}
+function fetchfromdb()
+{
+  fetchfromdb(searchterm)
+}
+function fetchfromdb(query)
+{
+  query = query.toLowerCase()
+  lastdbquery = query
+  if(db == null || query == "" || query == " " || query == null || zeromesearch)
+  {
+    lastslug = "";
+    result = "";
+    refreshDisplay()
+    return result;
+  }
+  query = query.replace(/ /g,'-')
+  query = query.replace(/\./g, '')
+  var direct = db.exec('SELECT body, slug FROM pages WHERE slug == \''+query+'\' ORDER BY date_added desc LIMIT 1');
+  var similar = db.exec('SELECT body, slug FROM pages WHERE slug LIKE \'%'+query+'%\' ORDER BY slug asc, date_added desc LIMIT 1');
+    // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
+    var text = ""
+    var pagename = ""
+
+  if(direct[0])
+  {
+    text = direct[0].values[0][0]
+    pagename = direct[0].values[0][1]
+  }
+  else if(similar[0])
+  {
+    text = similar[0].values[0][0]
+    pagename = similar[0].values[0][1]
+    if(pagename == lastslug)
+    {
+      return result;
+    }
+  }
+  else
+  {
+    result = ""
+    refreshDisplay()
+    return result;
+  }
+    result = ""
+    lastslug = pagename
+    
+    var myRe = /(?:^|\n)([^\#\-\=]|(?:.{10,}\.|\?|.{50,}))(?:\n|$)/g;///(?:^|\n)([^\#\-\=].+)(?:\n|$)/g;
+    var myArray;
+    myArray = myRe.exec(text)
+    if(myArray != null)
+      bdy = myArray[0]
+    else
+      bdy = text
+    //(?:^|\n)([^\#\-\=]|(?:.{10,}\.|.{50,}))(?:\n|$)
+    if(bdy.length >= 1000)
+      bdy = bdy.substr(0,1000)
+
+    wiki = marked(bdy).replace(/\[\[?(.+?)?(?:\|(.+?))?(?:\]\]|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1|$2</span>").replace(/>#(?:[^<]+?\|)([^<]+)</g, ">#$1<").replace(/>#([^<]+?)\|</g,">#$1<")
+    result = "<span class='entry'><span class='wiki'><span class='wikititle'><b><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/?Page:"+pagename+"'>"+pagename+"</a></b></span><span class='wikilogo'><a href='"+url+"138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP'>ZeroWiki</a></span><br><span class='wikitext'>"+wiki+"</span></span></span>";
+    refreshDisplay()
+  return result;
+}
+
+var sname = "Kaffiene"
+var zeromesearch = false;
+function selectSearch(selected, u = "") {
+
+    var loadurl = selected.value;
+    sname = selected.options[selected.selectedIndex].innerHTML;
+    if(selected.value == "userdata.txt")
+      zeromesearch = true;
+    else
+      zeromesearch = false;
+    if(selected.value == "externalsource")
+    {
+
+      if(u == "")
+        var loadurl = prompt("Enter the URL to the index you wish to use:", "URL");
+      else
+        loadurl = u;
+      if(loadurl == "followers")
+        loadurl = "followers.txt"
+      sname = loadurl;
+      
+    }
+    
+
+    if(sname == "followers.txt")
+      zeromesearch = true;
+
+    if (sname == "Kaffiene")
+    {
+      datau = datab;
+      $('#curindex').html(datau.length + " <a href=\"data.txt\" target='_top'>sites</a> and growing");
+      search();
+      lastslug="";
+        fetchfromdb(searchterm);
+      return;
+    }
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", loadurl, true);
+    xhr.responseType = "text";
+    xhr.onload = function(event) {
+        rt = xhr.responseText
+        rt = rt.replace(/",/g, "")
+        rt = rt.replace(/"/g, "")
+        rt = rt.replace(/\{/g, "")
+        rt = rt.replace(/\}/g, "")
+
+        if(sname == "ZeroName")
+        {
+          //rt = rt.replace(/:/g, "[:")
+          rt = rt.replace(/ /g, "")
+        }
+        if(sname == "Kaffiene - Full")
+        {
+          datau = datab;
+          datau = datau.concat(rt.split("\n"));
+        }else{
+        datau=rt.split("\n");
+        }
+
+        $('#curindex').html("~"+datau.length + " sites loaded from "+sname);
+        search();
+        lastslug="";
+        fetchfromdb(searchterm);
+    };
+    xhr.send();
+}
+
+
+
+
+
+function sortrank(a,b)
+{
+  var aval = a[1]=='-'?0:a[1];
+  var bval = b[1]=='-'?0:b[1];
+  return bval-aval;
+}
+
+//Run the search
+var urldata = [];
+var page = 0;
+var retmax = 15;
+function search(){
+  if(splash)
+  {
+    $('#searchheader').css("height", "")
+    $('#head-container').addClass("hcmod")
+    $('#sr').detach().appendTo("#searchheader").removeClass("searchbox").addClass("topbarsearch").addClass("hcfix").focus()
+    $('#randbutton').detach().appendTo("#searchheader").addClass("hcfix").addClass("randbuttontopmod")
+    $('#selectedsearch').detach().appendTo("#sscontainer")
+    $('#curindex').detach().appendTo("#sscontainer")
+    $('#splash').remove()
+    $('#splashlinks').remove()
+    $('#logo').addClass("logo")
+    splash = false;
+  }
+
+
+  page = 0;
+  var startTime = new Date();
+  urldata = [];
+  $("#results").innerHTML="";
+
+  var found = 0;
+
+  //Split the search term for easier searching
+  sra=[];
+  searchterm = $("#sr").val();
+  var sra = searchterm.toLowerCase().split(" ");
+
+  //Loop through sites
+  for (var i=datau.length-1;i>=0; i--)
+  {
+    var accept = 1;
+    //Loop through search terms
+    for (var term=0;term<sra.length;term++)
+    {
+      var patt = new RegExp(sra[term]);
+      if(patt.test(datau[i].toLowerCase()) == false){
+        accept = 0; break; }
+    }
+    //If site matches search, add it to results.
+    if(accept)
+    {
+      var data = datau[i].split(":");
+      if (data.length > 1)
+      {
+      var addrank = data[1].split(" ");
+      if(addrank.length <= 1)
+        var addrank = [data[1],'-'];
+      var desc = data[0].split("[");
+      profilename = ""
+      if(zeromesearch)
+      {
+        hubauth = addrank[0].split("/")
+        addrank[0] = "Me.ZeroNetwork.bit/?Profile/"+addrank[0];
+        idnamearr = desc[0].split("-")
+        desc[0] = idnamearr[1]
+        profilename = "<br><span class='usercertresult'>"+idnamearr[0]+"<br>Auth_Address:"+hubauth[1]+"<br>Hub:<span class=\"tag\" onclick=\"searchphrase('"+hubauth[0]+"')\">"+hubauth[0]+"</span></span>"//.replace(/@zeroid.bit/gi,"@zid").replace(/@kaffie.bit/gi,"@kfid")+"<br>"
+      }
+
+      var str = ["<div class='entry'><span class='siterank'>",addrank[1],"<br><c>peers</c></span> <span class='resentry'><a class='sitelink' href='", url, addrank[0], "' target='_top'>", desc[0], "</a> <span class='proxies'><a id='kfp' class='proxylink' href='",proxy1,addrank[0],"' target='_top'>1</a><a id='bnp' class='proxylink' href='",proxy2,addrank[0],"' target='_top'>2</a><a id='wwp' class='proxylink' href='",proxy3,addrank[0],"' target='_top'>3</a></span>", profilename, "<br><span class='tags'>", desc[1], "</span></span></div>"];
+      //.join("");
+      urldata.push(str);
+      //document.getElementById("results").innerHTML+="<a href='"+url+data[1]+"' target='_top'>" + desc[0]+" </a> - ";
+      //document.getElementById("results").innerHTML+="~"+desc[1]+"`\n";
+      //document.getElementById("results").innerHTML+=desc[1]+"<br>";
+      found+=1;
+      }
+    }
+  }
+  urldata.sort(sortrank);
+
+  //urldata.length
+  //fetchfromdb(searchterm)
+
+  displayResults(page, retmax);
+
+  //Display number of results
+  var rstring = "<center>page <span id='pagenum'>1</span> of "+found+" result";
+  if(found != 1){ rstring+="s"; }
+
+  var endTime = new Date();
+  var timeDiff = endTime - startTime;
+
+  $("#resultsfound").html(rstring+" found in "+timeDiff+"ms. <a href='?q="+escape($("#sr").val())+"&i="+sname+"'>share</a><br></center>");
+}
+
+function refreshDisplay()
+{
+  displayResults(page, retmax)
+}
+function displayResults(newpage, retmax)
+{
+  scroll(0,0)
+  page = newpage;
+  $("#results").html("");
+  $("#pages").html("");
+
+  $("#results").append(result);
+
+  for(var d = page*retmax; d < (page*retmax)+retmax; d++)
+  {
+    if(d >= urldata.length)
+      break;
+    $("#results").append(urldata[d].join(""));
+  }
+
+  var pages = urldata.length/retmax;
+  if(pages > 1)
+  {
+    if(page != 0)
+    {
+      var pagelink = '<button onclick="displayResults('+(page-1)+','+retmax+');"'+'>Previous</button>';
+            $("#pages").append(pagelink);
+    }
+    var start = 0;
+    var end = pages;
+    if(pages >= 10)
+    {
+      if (page >= 5)
+        start = page-4;
+
+      if(page <= pages-5)
+      {
+          if(page >= 5)
+            end = page+5;
+          else
+            end = 9;
+      }
+      else
+      {
+        start = parseInt(pages)-parseInt(9);
+        end = pages;
+      }
+    }
+
+    if(start > 0)
+      $("#pages").append("...");
+    for(var i = start; i < end; i++)
+    {
+      var pagelink = '<a href="#" onclick="displayResults('+i+','+retmax+');"'+"> "+(i+1)+" </a>";
+      if(i == page)
+        pagelink = i+1;
+      $("#pages").append(pagelink);
+    }
+    if(end < pages)
+      $("#pages").append("...");
+    if(page < pages-1)
+    {
+      var pagelink = '<button onclick="displayResults('+(page+1)+','+retmax+');"'+'>Next</button>';
+            $("#pages").append(pagelink);
+    }
+  }
+
+
+  
+
+  //Discover Mode / Tags
+  if(zeromesearch == false)
+  {
+    //$("#results").html($("#results").html().replace(/~/g,"<br><span class='tags'>"));
+  //$("#results").html($("#results").html().replace(/`/g,"</span><c><br><br></c>"));
+  var elements = document.getElementsByClassName('tags');
+  for(var e = 0; e < elements.length; e++)
+    elements[e].innerHTML = elements[e].innerHTML.replace(/ ?(.+?)(,|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1</span> ")
+  }
+
+  if($('#pagenum') != null)
+    $('#pagenum').html(page+1);
+}
+
+function searchphrase(text)
+{
+  $("#sr").val(text);
+  fetchfromdb(text);
+  search();
+}
+
+function randomsearch()
+{
+  var r = Math.floor(Math.random() * datau.length);
+  var data = datau[r].split(":");
+  var desc = data[0].split("[");
+  var nametags = desc[0].split(" ");
+  if (desc.length == 2)
+  {
+    var tags = nametags;
+    if(desc[1] != '')
+      tags = tags.concat(desc[1].split(","));
+
+    var term = tags[Math.floor(Math.random() * tags.length)].replace(" ","");
+    $("#sr").val(term);
+    search();
+  }
+  else if(nametags.length != 0)
+  {
+    var term = nametags[Math.floor(Math.random() * nametags.length)].replace(" ","");
+    $("#sr").val(term);
+    search();
+  }
+  else {
+    randomsearch();
+  }
+}
+
+</script>
+<div id="head-container" class="head-container">
+    <a href="./" target='_top' id="logo"><span class = "blue">K</span><span class = "red">a</span><span class = "green">f</span><span class = "yellow">f</span><span class = "blue">i</span><span class = "red">e</span><span class = "green">n</span><span class = "yellow">e</span></a>
+  
+  <span id="splashlinks" style="padding-left: 10px; padding-right: 10px">
+    <script>document.write('<a href="'+url+'kaffie.bit" target=\'_top\'>')</script>Home</a> |
+    <script>document.write('<a href="'+url+'id.kaffie.bit" target=\'_top\'>')</script>ID</a> | 
+    <script>document.write('<a href="'+url+'kaffiene.bit" target=\'_top\'>')</script>Search</a> | 
+    <script>document.write('<a href="'+url+'blog.kaffie.bit" target=\'_top\'>')</script>Blog</a> | 
+    <script>document.write('<a href="'+url+'hub.kaffie.bit" target=\'_top\'>')</script>Hub</a> |
+    <a href="python.html" target='_top'>Scripts</a> | <a href="install.html" target='_top'>Install</a>
+  </span>
+
+  <div id="searchheader" style="height:0px"></div>
+</div>
+
+<div id="sscontainer" class="selectboxfix">
+</div>
+
+<div id="splash" class="splashouter">
+  <div class="splash" id="header" align="center">
+    <h1><span class = "blue">K</span><span class = "red">a</span><span class = "green">f</span><span class = "yellow">f</span><span class = "blue">i</span><span class = "red">e</span><span class = "green">n</span><span class = "yellow">e</span></h1>
+    <script>document.write("<span id='curindex'>" + datau.length + " <a href=\"data.txt\" target='_top'>sites</a> and growing</span>");</script><br>
+    Can't find your site?
+    <script>document.write('<a href="'+url+'Mail.ZeroNetwork.bit/?to=kaffie" target=\'_top\'>')</script>Send me a message.</a><br>
+
+
+    <select id="selectedsearch" onchange="selectSearch(this)">
+      <option value="" disabled selected>Switch Search Index</option> 
+      <option value="">Kaffiene</option>
+      <option value="newsites.txt">Kaffiene - Untagged</option>
+      <option value="newsites.txt">Kaffiene - Full</option>
+      <!--script>document.write('<option value="'+url+'1ZeroeuDnL2jNS6t1epQa1SPvC91KG8ER/data.dat">ZeroSearch</option>')</script-->
+      <script>document.write('<option value="'+url+'1f7fyxzwsz5yg7nd8sgshcweqgvdnvvqf/data.json">Bwoi</option>')</script>
+      <script>document.write('<option value="'+url+'1LC3ryygCrv94ZK4Nk8ELW6vE1hKwopE8T/data.txt">CensoredSearch</option>')</script>
+      <script>document.write('<option value="'+url+'1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F/data/names.json">ZeroName</option>')</script>
+      <option value="zeromehubs.txt">ZeroMe Hubs</option>
+      <option value="userdata.txt">ZeroMe Users</option>
+      <option value="externalsource">Custom/Other</option>
+    </select>
+    <br><br>
+
+    <input type = "search" class = "searchbox" name = "search_input" id = "sr" placeholder = "Search..." required x-webkit-speech results = "10" autosave = "search_input" title = "Search Zeronet" role = "search" autofocus autocomplete = "true" tab-index = "1"/></input>
+    <button id="randbutton" onclick="randomsearch()">R</button>
+  </div>
+</div>
+
+<div id="main-google-search" align="center">
+<div id="resultsfound"></div>
+<div id="results"></div>
+<div id="pages"></div>
+</div>
+<script>
+$('#sr').focus()
+document.getElementById('sr').onkeyup = function(e){ search(); }
+document.getElementById('sr').onkeypress = function(e){ search(); }
+var timer;
+$('#sr').keypress(function(e){
+    //$('#result').text('Typing ...');
+    
+    // clear the timer as keys are still entered
+    if(timer) clearTimeout(timer);
+    
+    // setup the timer
+    timer = setTimeout(function(){
+        fetchfromdb(searchterm)
+    }, 100);
+});
+
+var s = gup('q',location.href)
+if(s != null)
+  searchphrase(decodeURIComponent(s.replace(/\+/g,  " ")));
+var i = gup('i',location.href).replace(/%20/g, " ")
+selected = document.getElementById('selectedsearch')
+if(i != null)
+{
+  var found = false
+  for (var j=0;j<selected.options.length-1; j++)
+  {
+    if(selected.options[j].innerHTML.toLowerCase() == i.toLowerCase())
+    {
+      selected.selectedIndex = j;
+      selectSearch(selected);
+      found = true;
+      break;
+    }
+  }
+  if(found == false)
+  {
+    selected.selectedIndex = selected.options.length-1;
+    selectSearch(selected,i);
+    found = true;
+  }
+}
+</script>
+</body>
+</html>
