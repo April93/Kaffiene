@@ -63,6 +63,6 @@ for follow in followers:
 			if row[1] and row[2]:
 				link = row[1]+"/"+row[2].replace('data/users/','')
 				f.write(link)
-				f.write(" "+str(followdict.get(row[2].replace('data/users/',''),'-')))
+				f.write(" "+str(followdict.get(row[2].replace('data/users/',''),'0')))
 			f.write("\n")
 f.close()
