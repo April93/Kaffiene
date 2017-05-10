@@ -7,7 +7,10 @@
 <script src="jquery-3.1.0.min.js"></script>
 <script src="sql.js"></script>
 <script src="marked.min.js"></script>
+<script type="text/javascript" src="ZeroFrame.js"></script>
 <script>
+class Page extends ZeroFrame {}
+page = new Page();
 function gup( name, url ) {
   if (!url) url = location.href;
   name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
@@ -37,10 +40,23 @@ if(window.location.hostname == "search.kaffie.bit" || window.location.hostname =
 <body>
 <script>
 var splash=true;
+var indexsize = 0;
+var splashtext = " <a href=\"data.txt\" target='_top'>sites</a> and growing</span>";
 //Grab the site information from data.txt.
 var datau;
 var datab;
 var xmlhttp;
+
+page.cmd("fileGet", 'data.txt', function(data) {
+        datau=data.split("\n");
+        datab=datau;
+        indexsize = datau.length;
+        curindex = document.getElementById('curindex')
+        if(curindex)
+          curindex.innerHTML = indexsize + splashtext;
+        return;
+       });
+/*
 if (window.XMLHttpRequest)
 {
   xmlhttp=new XMLHttpRequest();
@@ -59,6 +75,7 @@ xmlhttp.onreadystatechange=function()
 }
 xmlhttp.open("GET",siteindex,false);
 xmlhttp.send();
+*/
 
 lastdbquery = ""
 var db = null
@@ -193,7 +210,7 @@ function selectSearch(selected, u = "") {
     if (sname == "Kaffiene")
     {
       datau = datab;
-      $('#curindex').html(datau.length + " <a href=\"data.txt\" target='_top'>sites</a> and growing");
+      $('#curindex').html(datau.length + splashtext);
       search();
       lastslug="";
         fetchfromdb(searchterm);
@@ -484,7 +501,7 @@ function randomsearch()
 <div id="splash" class="splashouter">
   <div class="splash" id="header" align="center">
     <h1><span class = "blue">K</span><span class = "red">a</span><span class = "green">f</span><span class = "yellow">f</span><span class = "blue">i</span><span class = "red">e</span><span class = "green">n</span><span class = "yellow">e</span></h1>
-    <script>document.write("<span id='curindex'>" + datau.length + " <a href=\"data.txt\" target='_top'>sites</a> and growing</span>");</script><br>
+    <script>document.write("<span id='curindex'>" + indexsize + splashtext);</script><br>
     Can't find your site?
     <script>document.write('<a href="'+url+'Mail.ZeroNetwork.bit/?to=kaffie" target=\'_top\'>')</script>Send me a message.</a><br>
 
@@ -515,6 +532,11 @@ function randomsearch()
 <div id="pages"></div>
 </div>
 <script>
+function updateCount(count)
+{
+  $('#curindex').innerHTML = count;
+}
+updateCount(0)
 $('#sr').focus()
 document.getElementById('sr').onkeyup = function(e){ search(); }
 document.getElementById('sr').onkeydown = function(e){ search(); }
