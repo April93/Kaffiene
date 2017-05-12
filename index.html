@@ -42,40 +42,39 @@ if(window.location.hostname == "search.kaffie.bit" || window.location.hostname =
 var splash=true;
 var indexsize = 0;
 var splashtext = " <a href=\"data.txt\" target='_top'>sites</a> and growing</span>";
+var sname = "Kaffiene"
+var zeromesearch = false;
+
 //Grab the site information from data.txt.
 var datau;
 var datab;
 var xmlhttp;
-
 page.cmd("fileGet", 'data.txt', function(data) {
-        datau=data.split("\n");
-        datab=datau;
-        indexsize = datau.length;
-        curindex = document.getElementById('curindex')
-        if(curindex)
-          curindex.innerHTML = indexsize + splashtext;
+        datab=data.split("\n");
+        if(sname == "Kaffiene")
+        {
+          datau=datab;
+          indexsize = datau.length;
+          curindex = document.getElementById('curindex')
+          if(curindex)
+            curindex.innerHTML = indexsize + splashtext;
+          if(searchterm != "")
+          {
+            search()
+            lastslug="";
+            fetchfromdb(searchterm);
+          }
+        }
+        if(sname == "Kaffiene - Full")
+        {
+          datau = datau.concat(datab);
+          $('#curindex').html("~"+datau.length + " sites loaded from "+sname);
+          search();
+          lastslug="";
+          fetchfromdb(searchterm);
+        }
         return;
        });
-/*
-if (window.XMLHttpRequest)
-{
-  xmlhttp=new XMLHttpRequest();
-}
-else
-{
-  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-}
-xmlhttp.onreadystatechange=function()
-{
-  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-  {
-    datau=xmlhttp.responseText.split("\n");
-    datab=datau;
-  }
-}
-xmlhttp.open("GET",siteindex,false);
-xmlhttp.send();
-*/
 
 lastdbquery = ""
 var db = null
@@ -115,7 +114,6 @@ function fetchfromdb(query)
   query = query.replace(/\./g, '')
   var direct = db.exec('SELECT body, slug FROM pages WHERE slug == \''+query+'\' ORDER BY date_added desc LIMIT 1');
   var similar = db.exec('SELECT body, slug FROM pages WHERE slug LIKE \'%'+query+'%\' ORDER BY slug asc, date_added desc LIMIT 1');
-    // contents is now [{columns:['col1','col2',...], values:[[first row], [second row], ...]}]
     var text = ""
     var pagename = ""
 
@@ -143,8 +141,7 @@ function fetchfromdb(query)
     result = ""
     lastslug = pagename
     
-    var myRe = /(?:^|\n)([^\#\-\=]|(?:.{10,}\.|\?|.{50,}))(?:\n|$)/g;///(?:^|\n)([^\#\-\=].+)(?:\n|$)/g;
-
+    var myRe = /(?:^|\n)([^\#\-\=]|(?:.{10,}\.|\?|.{50,}))(?:\n|$)/g;
     if(lastslug == "proxies")
     {
       var myRe = /- (https?:\/\/.+?(?:\/|\n| ))/g;
@@ -168,7 +165,6 @@ function fetchfromdb(query)
         bdy = myArray[0]
       else
         bdy = text
-      //(?:^|\n)([^\#\-\=]|(?:.{10,}\.|.{50,}))(?:\n|$)
       if(bdy.length >= 1000 && lastslug)
         bdy = bdy.substr(0,1000)
     }
@@ -180,8 +176,7 @@ function fetchfromdb(query)
   return result;
 }
 
-var sname = "Kaffiene"
-var zeromesearch = false;
+
 function selectSearch(selected, u = "") {
 
     var loadurl = selected.value;
@@ -209,11 +204,14 @@ function selectSearch(selected, u = "") {
 
     if (sname == "Kaffiene")
     {
-      datau = datab;
-      $('#curindex').html(datau.length + splashtext);
-      search();
-      lastslug="";
+      if(datab != null)
+      {
+        datau = datab;
+        $('#curindex').html(datau.length + splashtext);
+        search();
+        lastslug="";
         fetchfromdb(searchterm);
+      }
       return;
     }
     var xhr = new XMLHttpRequest();
@@ -228,13 +226,18 @@ function selectSearch(selected, u = "") {
 
         if(sname == "ZeroName")
         {
-          //rt = rt.replace(/:/g, "[:")
           rt = rt.replace(/ /g, "")
         }
         if(sname == "Kaffiene - Full")
         {
-          datau = datab;
-          datau = datau.concat(rt.split("\n"));
+          if(datab != null)
+          {
+            datau = datab;
+            datau = datau.concat(rt.split("\n"));
+          }else
+          {
+            datau = rt.split("\n");
+          }
         }else{
         datau=rt.split("\n");
         }
@@ -322,19 +325,12 @@ function search(){
       }
 
       var str = ["<div class='entry'><span class='siterank'>",addrank[1],"<br><c>peers</c></span> <span class='resentry'><a class='sitelink' href='", url, addrank[0], "' target='_top'>", desc[0], "</a> <span class='proxies'><a id='kfp' class='proxylink' href='",proxy1,addrank[0],"' target='_top'>1</a><a id='bnp' class='proxylink' href='",proxy2,addrank[0],"' target='_top'>2</a><a id='wwp' class='proxylink' href='",proxy3,addrank[0],"' target='_top'>3</a></span>", profilename, "<br><span class='tags'>", desc[1], "</span></span></div>"];
-      //.join("");
       urldata.push(str);
-      //document.getElementById("results").innerHTML+="<a href='"+url+data[1]+"' target='_top'>" + desc[0]+" </a> - ";
-      //document.getElementById("results").innerHTML+="~"+desc[1]+"`\n";
-      //document.getElementById("results").innerHTML+=desc[1]+"<br>";
       found+=1;
       }
     }
   }
   urldata.sort(sortrank);
-
-  //urldata.length
-  //fetchfromdb(searchterm)
 
   displayResults(page, retmax);
 
@@ -532,18 +528,11 @@ function randomsearch()
 <div id="pages"></div>
 </div>
 <script>
-function updateCount(count)
-{
-  $('#curindex').innerHTML = count;
-}
-updateCount(0)
 $('#sr').focus()
 document.getElementById('sr').onkeyup = function(e){ search(); }
 document.getElementById('sr').onkeydown = function(e){ search(); }
 var timer;
 $('#sr').keydown(function(e){
-    //$('#result').text('Typing ...');
-    
     // clear the timer as keys are still entered
     if(timer) clearTimeout(timer);
     
@@ -553,10 +542,14 @@ $('#sr').keydown(function(e){
     }, 100);
 });
 
+
+var i = gup('i',location.href).replace(/%20/g, " ")
 var s = gup('q',location.href)
 if(s != null)
-  searchphrase(decodeURIComponent(s.replace(/\+/g,  " ")));
-var i = gup('i',location.href).replace(/%20/g, " ")
+{
+  $("#sr").val(decodeURIComponent(s.replace(/\+/g,  " "))); //searchphrase(decodeURIComponent(s.replace(/\+/g,  " ")));
+  searchterm = $("#sr").val();
+}
 selected = document.getElementById('selectedsearch')
 if(i != null)
 {
