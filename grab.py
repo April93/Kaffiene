@@ -15,7 +15,7 @@ PHANTOMJS_PATH = "phantomjs"
 
 #Select source
 #url = "https://proxy1.zn.kindlyfire.me/1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
-url = "https://bit.no.com:43110/1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
+url = "https://www.0proxy.ml/1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
 #url = "http://proxy.zeroexpose.com/1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D"
 #url = "http://zeronet.crypt.cat:8080/1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D/"
 #url = "https://zeroproxy.atomike.ninja/1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D/"

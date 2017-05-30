@@ -123,18 +123,18 @@ twister win builds[twister, p2p, blog, win, build:1FTdJttg8XHfKGdCHFtwd9RqnQpdbW
 linux forum:16Go5kc2U9Ff4jeaY8kYiDEgpMYdgyboPY 64
 doge ascii art:1MboomQFfBWx7efYtfDhy8RmLbZVF7eDzV 11
 dev.net forum:1BRpXzopWiKYK3aKQ2JHimy4Z1KHdNgELR 95
-raspberry pi forum[forum, raspberry pi, raspberry, pi, tutorial, help, user, community:1GBSaSnCSLpWpxuyuw3HX9Mv1RZZRUVPmy 2
+raspberry pi forum[forum, raspberry pi, raspberry, pi, tutorial, help, community:1GBSaSnCSLpWpxuyuw3HX9Mv1RZZRUVPmy 2
 raspberrypi.net[raspberry, pi, forum, community:1E7cBjoPgdgcDjSDUGZLDUUMHFBLozQGos 33
 g0r'blog[test, beginning, blog:1DQ42Zpquq6e29mQXLBCA6aRtQEhkmbEon -
 g0r'blog 2[g0r, blog, exploration:1FgWNU2ui58edVPaVr5F356A1vqL7auUyC 17
 heathenman's proxy:1NNrpHSsucpLxE2MkRj8GPX1Rh1anJfw8h 38
-Alternatives - IT[french, IT, mesh, make, hack, alternative, alternatives, opensource, decentralized, blockchain, ouvert, partage, libre, gnu:1JRzcmmm7X4iLsSLRDK7DT6EP2uPMnuLhP 111
+Alternatives - IT[french, mesh, make, hack, alternative, alternatives, opensource, decentralized, blockchain, ouvert, partage, libre, gnu:1JRzcmmm7X4iLsSLRDK7DT6EP2uPMnuLhP 111
 zerolimit[torrents, download, magnet, movies, musics, games, applications, apps, series, tv, shows, episodes:1JHbFz5bsszfPHESJhvchVPzdu8nes1aAq 152
 Simple Wiki Clone[wiki, info, simple, opensource:19gMfyS987hcojUQZZKzWWYF5ZYKH8Y5yJ 70
 sabotage.blogfa.com on zeronet[anarchism, anarchy, persian, iran, blog:14uss8E7FActz8qMqRvTFkoVSZHCe94Nt2 -
 cgm616's blog[new, blog, cgm616:1N9pXXwAVadHQnFBj1DZhpdiHRva5Dix8b 80
 zeromaps[maps, globe, world, earth, navigate:1yUji4qPD7GAog8XkP3EDMEfrL995S4Xd 152
-brainofjt[blog, fun, informative, entertainment, educational, images, social, funny, tags, search, good, clean:1Ke3ccK9Hb12YDrXM3StzEEBMpzbBUoNDo 18
+brainofjt[blog, fun, informative, entertainment, educational, images, social, funny, tags, search, clean:1Ke3ccK9Hb12YDrXM3StzEEBMpzbBUoNDo 18
 sharing books on zeronet[books, pdf, text, docs, library, download:13NS3rSzCTpAYtH997rphfZDaWRypyjwnU 151
 klaus zimmermann on zero net[blog, free, software, p2p, zeronet, decentralization, activism, privacy:1GiJUPsfiS3LWCyZj5urW1Rt2q9WwRh4wB 101
 Hacking to the Gate[raito, spanish, español, blog, software libre, gnusocial, anime:17bpDUXTEvSjzp8zvG1RQA8jPuaVCsK52Q 130
@@ -147,7 +147,7 @@ nebel kerze[dampfen, dampfer ezigarette, nebelkerze, prohibition, vape, vaping, 
 testris seite[game, web, test:1Lgg6x1sLzztDAFKe12PhkmFwPtEGtftxx -
 pac man[pac man, pac, man, game, html5, games, pacman:14Q1So3DH9qvHts5VuLDgqGp7yCXceujop 93
 el blog de roberth castaño[blog, music, videos, images, tutorials, programming:125XDCqa8KRMhcZxr4FH7E7g7ZZNiBucVv 57
-0ne site[one site, site, index, blog, 0ne, 0neSite, 0ne Site:18dbb5v1JUjoZ7JkbsLUNpACHb549Bx6di 55
+0ne site[one site, site, index, blog, 0neSite:18dbb5v1JUjoZ7JkbsLUNpACHb549Bx6di 55
 the last bit[literature, blog, scifi, fiction, books, images:1JLxELZqQ8C9V7BJMxBczfQVh4TVehwobC -
 bit cannon[torrent, torrents, archive, backup, index, the pirate bay, KAT, kickass, yify, yts, kickasstorrents:1KbvKtQs6wKHB1m7YefeFetGMb5eSUxvZH 27
 shinra is a zero[blog, belge, belgique, francophone, français, france, découverte, shinra, nouveau, débutant:1BzRecLuaj3SuKDFQ1RXPpaNyUXbVjV89X 65
@@ -166,7 +166,7 @@ FIRST PROGRAMMER[blogs, images, social:1DMh4o6RRP6uCJqNgGngZWDiHFoJw1upQu 7
 Himalaya[yeti, comments, hints, tips, unix, linux, microcontroller, retro computing:195TNKe7aZbYT7cEjLXnKQ52487qpwas5x 34
 3x71nc7's Blog[blog, programming, tutorial, zeronet, how-to, tutorials:13x71nc7fju6afMqpEPfcu3Gx9Z5hNhH48 138
 jkne blog & music[blog, censorship, music, electronica, dance:15PHMSE9AZ19fT7wMWh9TCnGvbqdVQ4sS4 50
-statik's 0[statik, 0, zero, statikshock, blog, movies, tv shows, torrents, warez, p2p, scene, lifestyle, drugs, sex, alcohol, blog, news:1MMnZ9z2WT71RYxVcwkD2N2SpXqP71av1W 107
+statik's 0[statik, zero, statikshock, blog, movies, tv shows, torrents, warez, p2p, scene, lifestyle, drugs, sex, alcohol, blog, news:1MMnZ9z2WT71RYxVcwkD2N2SpXqP71av1W 107
 Kaffie's Blog[blog, kaffie, games, hacking, tech, zero, zeronet, code, programming, kaffiene, beginner, guide, intro:1N6zp6jCXPBktNMPfe7UJBpQGyfCq7k2M8 240
 Effekt's blog[english, blog, esperanto, communism, effekt:16exauHuGYMYnZosskjcuLU5bnSuLZPDGR 65
 tag's blog[tag, blog, social:18KWo3pqZLMbkcvTrFXtYEuzvZ3uM2F65L -
@@ -174,14 +174,14 @@ tag's blog[tag, blog, social:18KWo3pqZLMbkcvTrFXtYEuzvZ3uM2F65L -
 SlashterBlog[blog, decentralized, p2p, crypto:13iNCuuj8657WNbqd83QvoHEHeh5chQQKA 36
 LBlaze's Personal Project Blog[Blog, Personal, Projects:1L9ptNU5CuEqfpj3KFJH5jQH9Xz17JEBMc -
 Encrypted | Web Designer[website, coder, developer, website maker, website coder, job:1JKKd6DUhaNvWVuaBtNHS948og3JNd7qZM 73
-Mod's Blog[beginner, new, mod, help, programming, tutorial, guide, blog, tech, technology, zeronet, support, coffeescript:1NQSaE4rV83oeDVzDVryMNFSCqwz2gAaB4 73
+Mod's Blog[beginner, mod, help, programming, tutorial, guide, blog, tech, technology, zeronet, support, coffeescript:1NQSaE4rV83oeDVzDVryMNFSCqwz2gAaB4 73
 Play - Movie Catalog[play, movie, movies, cover, trailer, details, torrent, torrents, links, videos, entertainment:1PLAYgDQboKojowD3kwdb3CtWmWaokXvfp 4133
-0List[zero, zeronet, list, 0list, 0, site, directory, search, website, sites, websites, links:186THqMWuptrZxq1rxzpguAivK3Bs6z84o 1882
+0List[zero, zeronet, list, 0list, site, directory, search, website, sites, websites, links:186THqMWuptrZxq1rxzpguAivK3Bs6z84o 1882
 Faircoin[fair, coin, faircoin, bitcoin, currency, money, finance, wealth, inequality, economy, economics:151fgkx59GMjmbs74PESGrkrAjGDKb5cD3 31
 DankNet[danknet, dank, net, 0chan, p2p, imageboard, image, board:1BAXxPKQJVRUXs6SfVZ1WQzkPpNp7wKUdN 178
 Zero Bird[flappy, bird, game, zero, games, entertainment:1LMG9b3mhvnfAiMpRccSNzvTbq6bYCQWLf 92
 ZeroNet Docs[documentation, docs, zero, zeronet, instructions, guide, beginner, starting, tutorial:17Kom2G5qNDc6NaQwv445h1gFzxkY3ZtZe 198
-New 0Net Sites[zero, zeronet, net, 0net, sites, new, websites, seed, discover, index, find, list, script:1LtvsjbtQ2tY7SCtCZzC4KhErqEK3bXD4n 331
+New 0Net Sites[zero, zeronet, net, 0net, sites, websites, seed, discover, index, find, list, script:1LtvsjbtQ2tY7SCtCZzC4KhErqEK3bXD4n 331
 Rabbit Hole[blog, zeronet, zero, tech, seed, automated, coding, programming:19U5szASC1oBfwE1HdbT8pzbqSsJ3UFyEM 113
 Lucky Blog[lucky, blog, technology, security, programming, zero, zeronet, xss:1Eou8bzWUaCrVBMk29av9ZYBbsjdprmWNL 76
 cannonfodder blog[blog, cannonfodder, tv, magnet, torrents, .bit, domain, names, news, river:1KjvahynCGKAqGhQKyuHiiXCELUffmC7f4 92
@@ -198,13 +198,13 @@ Angristan Blog[blog, tech, zero, angristan:1Kr2j7wsM8NpQYCjgR6ccxHLuQmjdnVqD 60
 Bwoi[bwoi, search, engine, find, links, google, domain, names, sites, zero:1f7FYxZWSZ5YG7Nd8sGsHcWEQgvdnVvQF 314
 The D6 System[games, roleplaying, role, playing, d6, custom, rpg, table, top, tabletop:1Phwu1QykbfH5kC5EfkPgdPqN4VKGqrBi3 47
 Pirate Party Forum[pirate, party, forum, discussion, social, politic:1CLQ81TNixktJ67YFkZtbtsESy3MwZqLEG 106
-ZeroChat IRC[zero, chat, irc, talk, discussion, /me, me, social:1CjR14fofbRJ54oj8A7rAfWpzpLawdP5uc 183
+ZeroChat IRC[zero, chat, irc, talk, discussion, me, social:1CjR14fofbRJ54oj8A7rAfWpzpLawdP5uc 183
 Bootstrap 3 Demo[demo, bootstrap, development, programming, code, coding, ui, example:1LYcjeA5ZHPA9QuFXc9tUxWQtEmJf2meC4 37
 LivingNerdy[blog, living, nerdy, technology, science, web, design:1Gy4d5qM1GdnpW7MrSK3GnaqVhTQNA9QBW 24
 DOS Games[games, emulators, dos, play, entertainment, gaming:1T9fgrEwujZf7ACT9G1q5UaGdd6LunDYs 65
 Brain Wallet[brain, wallet, bitcoin, brainwallet, generator, currency:19f7mVoBEvB8ZADrCurc5oXcsTZyfVfgxi 62
 Snake Game[snake, games, entertainment, fun:1JsJ1JitaLboc8pvo4fxh9dvP8mt6toPrE 85
-Lucas' Blog[blog, 5sos, seconds, summer, luke, lucas, luke hemmings, calum hood, ashton irwin, michael clifford, live, slfl, sounds, good, feels, sgfg:194zbw7b1dksF27FCzhLqPZGkayqHWQBt4 34
+Lucas' Blog[blog, 5sos, seconds, summer, luke, lucas, luke hemmings, calum hood, ashton irwin, michael clifford, live, slfl, sounds, feels, sgfg:194zbw7b1dksF27FCzhLqPZGkayqHWQBt4 34
 CryptonBits[cryptography, blog, community:1C5P1EcTZA6FDEg4w6SacfPjvSDCWmzeyt 165
 What is ZeroNet?[zeronet, zero, net, introduction, beginner, programming, coding, code, site, decentralized, p2p, development:1F2Ks2NQGcERy1jsZc4KTC69SWnXpqSYQd 40
 Zearch[search, find, websites, sites, search engine, engine:163ZAwi5BcGBm6UEwdJF1pkcejDMCT1kAj 167
@@ -229,7 +229,7 @@ Current Time[clock, watch, time, current:19h2JJ9Vgb1eeypakbv5ucjjXfut8LYfi7 60
 Amstrad CPC Emulator[emulator, cpc, games, entertainment, roms:19VKLy7AAJaKfXb4sdE8YQjRaUcYfBXdis 32
 Liberty Library[library, books, 3d models, files, programs, music:1AFHPGdN9YmEtGC7iDcjU3Jq2WXAbLCxXu 73
 0List Blog[blog, zero, list, domains, names, sites, websites, namecoin:1Ajp75FXAxdTzRiRTpdBgd4exvbo4gMW12 379
-ZeroTodos[zero, todos, to, do, reminders, checklist:1B8LmXYHzMGZzcRWoidAQb5SmKSyfjN63f 159
+ZeroTodos[zero, todos, reminders, checklist:1B8LmXYHzMGZzcRWoidAQb5SmKSyfjN63f 159
 Prehistorik 2[prehistorik, dosbox, dos, emulator, rom, games, entertainment, fun:1BbFE1xH5S7ZM6itCb2PaN6iNPagW81ZbE 49
 VoIP News[voip, news, tech, call, phones, mobile, sip:1Bdxp6ks69ZBefSrdx928YgBjZ9wy1w8i7 45
 Hacktivism[hack, hacktivist, hacktivism, forum, discussion, board, social:1BHsVTucrTcsKBzLnMVJFvCsc6D5useHe5 73
@@ -311,7 +311,7 @@ ZeroChatrooms.bit[chat, irc, zero, zeronet, talk, discussion, social, index, lis
 ZeroMedia[chat, irc, media, social, talk, discussion:12qKywomfW5Hj5sQPYTH9wFQVrWzgaJj66 236
 Censored Search[search, engine, clearnet, blocked, list, censored:1LC3ryygCrv94ZK4Nk8ELW6vE1hKwopE8T 202
 Pix Images[images, album, pictures, photos:1KwcosRj1dR2rnZUQWYAaMseD74ps3o44m 220
-Nab Blog[nab, hate, en, ruby, programming, c, c++, unix, system, linux, world, fuck, blog, parasyt, elixir, programmation, program, dev, devops, nginx, python, php, lol, what, is, love, money:1Ht9QPJoN1A3F9ETC1UXWxbdMb2yZj4aEX 57
+Nab Blog[nab, hate, en, ruby, programming, c, c++, unix, system, linux, world, fuck, blog, parasyt, elixir, programmation, program, dev, devops, nginx, python, php, money:1Ht9QPJoN1A3F9ETC1UXWxbdMb2yZj4aEX 57
 Zeronet Benchmark[benchmark, test, speed:Benchmark -
 Zeronet Stats[stats, info, ip, peers, sites, information, statistics:Stats -
 YOMYPOPCORN - Never miss another episode[mobile, app, tv, episodes, popcorn, clearnet, android, phone:1ALSjeLbdBKDc5jsNdpLyVXef8FfSeMZoq 16
@@ -332,9 +332,9 @@ Lightning Blaze's Scripts and Code[blog, linux, coding, programming, tech:1DwsAk
 PingPong[pong, games, play, gaming, fun, entertainment:17wNH5uEUyWhGT8rDrABdJrJ4udGLtC9oJ 47
 The Linux Kernel Archives[linux, kernel, downloads, software, archives, open, source, opensource, mirror:1FANHLWU7QsffN12tAcMjKJ1FzWrWYRP8c 2
 Redeem unspent outputs - Bitcoin[bitcoin, btc, crypto, currency, tool, p2p:1H4V22yEk3RSTBGvjPAr5p4zZ2eJJsQN1K 17
-Two-Factor Bitcoin Address Generator (Bip38)[bitcoin, bip38, two, factor, address, btc, generator, p2p, crypto, currency, tool, peers:1GVRURUnmE5zDb2qhutE19DoJoYovptbf1 9
+Two-Factor Bitcoin Address Generator (Bip38)[bitcoin, bip38, factor, address, btc, generator, p2p, crypto, currency, tool, peers:1GVRURUnmE5zDb2qhutE19DoJoYovptbf1 9
 El Blog de kuato[blog, argentina, kuato, tecnologia, tecnology, videos, coding, learning, life, movies, music:1EHsK5ypznsJW4fGj5LnKQQ1EhZ4doZ8s6 24
-Pessoas que falam Português[português, pt-br, pt-pt, brasil, portugal, ajuda, chat, batepapo, conversa, dúvidas, zeronet:13RhXecmBH34X44Nohf2qMogZKH7KzoG78 29
+Pessoas que falam Português[português, brasil, portugal, ajuda, chat, batepapo, conversa, dúvidas, zeronet:13RhXecmBH34X44Nohf2qMogZKH7KzoG78 29
 Palante[tecnología, 3d, español, realidad, virtual, frikadas, cine:1Q3N9ZRuRrbzzUQfxatTRqB6rFgEPN12CP 6
 La mine[fr, français, blog, torrent, article:1MNb8vJAyyYEhmn5Lo962DttpGE7NYp4Yp 105
 Yobmob's Site[art, personal, photos, pictures:1AzAFRKvba4f3yMqYCaHhW9G5rnDFrhnAn 39
@@ -349,7 +349,7 @@ Kappa Sigma[blog, linux, zeronet, python, decentralization:1KdF3z61jUqqcfLnufJJs
 Kundalini & Satanism pdf[occult, information, wiki, 666, serpent, satanism, spiritual, religion, meditation, kundalini:1ErLDXv36Kd2CQvkr3ZMsnRcLg8ixnUxq4 33
 Zero Private - share encrypted text and files[encryption, privacy, secret, upload:1HAFn2Rg9VPtyzq7dixenHD9sekiX9Pzv3 125
 Thagoat's Blog[blog, personal, zeronet, p2p:1DXDDPLAvZNrEg4wzsX8CJqAzZvQ9G1Rvj 40
-BIP39 Mnemonic Code Converter[bitcoin, bip39, two, factor, address, btc, generator, p2p, crypto, currency, tool, peers:1HLhBUYe8u2kCnAqsuSUjZ7Ch9aEceb2tG 31
+BIP39 Mnemonic Code Converter[bitcoin, bip39, factor, address, btc, generator, p2p, crypto, currency, tool, peers:1HLhBUYe8u2kCnAqsuSUjZ7Ch9aEceb2tG 31
 ZeroStream.bit[stream, videos, ipfs, decentralization, decentralize, watch:1NXZEk3SupketTvbRxaXCERa1E9Es9hi4a 47
 audio.js in ZeroNet[stream, audio, example, javascript, demo, music:1Lod6THUt6v6ebZdBF2voYMk2QfvLvPm4q 61
 JSLibs[javascript, libraries, angular, backbone, bem:1Dt5dBDncyLL4bpi1Q6iSRX25FEF4gE4Ab 29
@@ -364,11 +364,11 @@ Ora on ZeroNet[personal, french, geek, gaming, vocaloid:16yAuiEGMNP9fF8P2srnyd4n
 ubiqq[chat, talk, irc, zerochat, discussion, social:1J6xxEddpJFDvyByVDFin2dH21jqpGC5ph 42
 myLock[encryption, easy, data, local, secret:17VFQ2Tnoa6oX94LnvDAYm7BkaMa2GxaDN 73
 0/SciFi[forum, talk, discussion, science, fiction, scifi, sci-fi:1BrgXu4E6jzdtvwec9oEU5Fir7355yeJF3 59
-ZeroWiki[wiki, wikipedia, encyclopedia, information, edit, knowledge, articles:138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP 585
+ZeroWiki[wiki, wikipedia, encyclopedia, information, knowledge, articles:138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP 585
 Capitalism vs Socialism[forum, talk, discussion, debate, economics, economy:19DtdQZymsSBcTw1P6rwKxtEx9fpf93Qug 68
-AnarchyZero Wiki[wiki, wikipedia, anarchy, information, edit, knowledge, articles:1CziiRbJUj9McUbzW8XZk5Nm3U1bkLR7dV 72
+AnarchyZero Wiki[wiki, wikipedia, anarchy, information, knowledge, articles:1CziiRbJUj9McUbzW8XZk5Nm3U1bkLR7dV 72
 PedoBlocker[blocklist, blog, block, list, illegal:1KWy8mTjFvviLWwkmUWUZZosxgpYEK8rUq 107
-Holons.bit[wiki, wikipedia, information, edit, knowledge, article:1MGyxzT25WYFGEjaty2ktHepMAmsSU1sF1 15
+Holons.bit[wiki, wikipedia, information, knowledge, article:1MGyxzT25WYFGEjaty2ktHepMAmsSU1sF1 15
 OpenUser[blog, french, français, openuser:16g8mFUtLsQBM6bPMJ6xEEQWLWAufnzEXA 57
 certAdd Issue[bug, demo, example, test:1G9sW6n1wqhUnoHLKEkycKM8sVgazFvFc 16
 Porn2Peer - Old[redirect, porn:1DVTrmkNwuEaNeFgHNKzK17w514M3RQbwm 87
@@ -442,7 +442,7 @@ myFree Speech[forum, discussion, free, speech, talk, zerotalk, social:1BUw4Ts519
 myUbuntu.net[forum, discussion, ubuntu, linux, talk, social:1E4qVKx6VFwVRaoP1kt6aDaRmA2BRhdNQV 3
 zeroit-index[subzero, index, domains, names, reddit, zeroit:17byDaCFi7W5NFtRDbBZU4RXxmZKok2g6P 16
 Laughing GIFs[tickle, laughing, images, pictures:1NB2khZEduoSghw68LKm15VF7Z4WUD2Go5 12
-ZeroTodos (fork)[zero, todos, to, do, reminders, checklist:1KjYJxr6oarfgE58ViQQZSY9JECAL43mj9 10
+ZeroTodos (fork)[zero, todos, reminders, checklist:1KjYJxr6oarfgE58ViQQZSY9JECAL43mj9 10
 Gluek.bit[test, site, example, personal, contact:1K6zqsjYkfUSrcPkyEq4ajku8Lr596CHdM 26
 AceLewis' Blog[blog, personal, reddit, twitter:1Mq9L2mNKkvK434A4Wtyv5AjQVasVLswJ9 22
 enwikinews_ Clone[default, blank:18iVHRjTjPfxaRnJ1vaWT4CkY62RAP6iAv 13
@@ -566,7 +566,7 @@ Rusty's Daily[porn, gifs, nsfw:18sfb3Mx9hqmVZuY3bQiE91Uc13TFrxWgM 53
 Русская свежатина[forum, russian, discussion, talk:13zWcviPiQWhyy8Yprou2pfvcfGcaNW3MF 33
 Посторонним в[blog, russian:16unhVWi9eLuZ4tosVtBd9eDqDTYzbgMSL 38
 Zero Central Demo[zero, central, demo, test, example, list, directory, sites:19nmnvKqv6Qee2p9rhgDBU6kBUQwUAsPmV 38
-Privacy Tools[instructions, guide, how, to, privacy, clearnet:1DWTx5S9sJi9Z4Pi6apfQxSzqSwfo4qTJd 3
+Privacy Tools[instructions, guide, how, privacy, clearnet:1DWTx5S9sJi9Z4Pi6apfQxSzqSwfo4qTJd 3
 ENALPRIA[pubmed, modafinil, pubchem:1EV8BFtVxK5MStC8YztAFCJRhNswrBqNvc 2
 Maggie's Blog[blog, maggie, links, directory, projects:15LS6faxCHDd45FW8Cy6jCqWHVpYjUAJj1 16
 myZeroTalk[forum, russian, talk, social, discussion:19wRmb5DYYx2W4uhKApvBDW6VfcaaaRG5D 5
@@ -699,7 +699,7 @@ mujj.us gaming club[blog, blank, default:1Dh7cGiWQY4msNLzFgNLxKeuYryZD7NQap 31
 东先生的留言板[forum, chinese, links:1TxcKUMehiMdwG1mRZZygUnD29F51jzrY 193
 Unknown[unknown, broken:16R2KEGyivJKvh6yQdjSSkcQ5TkTkXo6Pw 3
 reThink[blog, decentralization, governance:17rfztrEF95TmDTcBCoT91WMek3Zf9vBxZ 71
-Polska ZeroWiki[wiki, polish, information, edit, knowledge, wikipedia:17dKzaJm557RqT4ujWKrGf28cmYTGviRmr 14
+Polska ZeroWiki[wiki, polish, information, knowledge, wikipedia:17dKzaJm557RqT4ujWKrGf28cmYTGviRmr 14
 ZeroVerse News Redirect[redirect, zeroverse, news:15iysH487HNaQCBZT9nwEnAyHW9b4U1zwb 82
 Copie ZeroTalk FR en Test[forum, french, discussion, zerotalk:1JEYrrWQTkvka4VaZGcEYxHLPLNqLKHUcd 13
 ZeroTalk Polska[forum, polish, discussion, talk, zerotalk:1GRYnz73jSXoMMZNU3nSmbCFA3twuitcoo 100
@@ -722,7 +722,7 @@ Tudo Sobre Todos | Fórum[forum, discussion, zerotalk:143GuxnGcMqBbpjLokHZLaYcEG
 cd[chinese, guide, tutorial, zeronet:1Nqbz3dZqe3zyvLkWzvTSAn5z89W3xP3Mq 17
 Villoldos Notizen[blog, german:1LvA9gq9HQWJS1uB8CahzgNm3UJxFi9snt 74
 ZeroSecurity.bit[zeronet, security, info, protection, fix, problems, information:1HwwihAn2UNXF7XWm6ryRv1JkQzTFYSEej 323
-ZeroWiki Polska[wiki, polish, information, edit, knowledge, wikipedia:12Tt38zRJefsRMnAC9iai1CMSZ3PfiBDuY 41
+ZeroWiki Polska[wiki, polish, information, knowledge, wikipedia:12Tt38zRJefsRMnAC9iai1CMSZ3PfiBDuY 41
 unityofmulti.bit[splash, personal:1EvniGUp5knHx5jCSuPAwEHdFdG8JSj6BU 65
 GanXingQu[forum, chinese, discussion, china:1NzWeweqJ32aRVdM5UzFnYCszuvG5xV3vS 622
 东先生的留言板[forum, chinese:1CaqnnMrv9h9sWnTeWpuiorMsKGt34Zrd5 22
@@ -773,7 +773,7 @@ banned files[banned, files, directory, download, ipfs, pdfs, documents:1nMTxtHzn
 Zepeti Blog[blog, test, tor, zeronet, gifs:1BquZfdq8iDkQPZD5oo5xvkqURu6RgwnXM 1
 Criptica[privacy, security, surveillance, drones, privacidad, seguirdad, vigilancia, criptografia, cryptography, seguretat, privacitat:1NgEjAZu4wrhs8Ns426Cvqo7pH4HBwffHD 12
 Shadowsocks[blog, blank:1fF6ExrsWmt7h8cyq456z8W8k5vQsDRdB 61
-+1s[chinese, plus, one:1bCDHmhvQWAPnpoXa7rin5CcvREwuNiKS 76
++1s[chinese, plus:1bCDHmhvQWAPnpoXa7rin5CcvREwuNiKS 76
 New ZeroHello[mirror, hello, homepage, proxy:164cmcdrNnUjJeyjqamtmXeugTshT7AbCc 10
 myZeroTalk[chinese, forum, talk, social:15i81tftAKTcsnV1ZRwq3b5nBoT7QSvhER 101
 8 bits Away[bits, free time, blog, blogs, daily, crazy, strange, curious, life, 8 bit, byte:1GrwWFTmrKgUGQsGxrKSsRbb2dt8UJaBPN 83
@@ -873,7 +873,7 @@ ZeroEconomist[noticias,economia,dinheiro,money,info,dolar,bolsa,valores:18sCHXGU
 专访：美国众议员史密斯谈中国人权[chinese, videos, ipfs:12NF2XXLShPxYm7p549rwVT3QTueBFcpjH 2
 aimotion[blog, default, blank, empty:1KQCWPVrLi8Zx4jVkMuJnxGg7UdrgQVXxz 22
 shan[blog, chinese, zeronet, hexo:1GiiimPPghTDbsPoYZS74aPsjThWfij3kN 19
-1nfused[programming, editor, javascript:1NFUSEDZjmCFJE1JSG5UjwCRK6zDwQRQd7 35
+1nfused[programmingor, javascript:1NFUSEDZjmCFJE1JSG5UjwCRK6zDwQRQd7 35
 Not All Who Code and Fix Are Lost[blog, programming, coding:1Jnup6n1oXJFNcy8NAWMyZboYHztfs56He 38
 Lulucat's ZeroBlog[chinese, blog, pgp, zeronet:1CfacmgmCqEsCJm2AKMqBhD7GSFwP3Ys4K 94
 PWNED[blog, hack, software, exscanner:12jHe7sRzMqLzCdKY2L5T52rZMSd4Ra5mN 27
@@ -997,7 +997,7 @@ myZeroTalk[forum, discussion, talk, social:1K1YcZXpynw2qjPzCsPKjMBHTZAEGF8V7h 10
 Blog[blog, default, blank, empty:15wRZJenVixJ6TLSCETtKcyr9nmKkTKXf7 8
 Bla...[blog, default, blank, empty:1LVgxT1bXHNWCFZrcuTDC2d1suwnjwPKUi 8
 读书会[forum, chinese, talk, discussion, links:1PoZMgrCsJd8syo5PHfcCtUuLHK8SVamXu 7
-Eason的随想地[eason, eco, economic, IT, thought:1NiRRnJSS7Z3NB8Eq5hRdnK6jqSyGnkEQ2 9
+Eason的随想地[eason, eco, economic, thought:1NiRRnJSS7Z3NB8Eq5hRdnK6jqSyGnkEQ2 9
 WAM[blog, default, blank, empty:184RY7XgV2byu7pjj3TJJ3tswcvfHtcnD3 2
 wuxu.bit[blog, default, blank, empty:16Cg6aVyeAG2Ut32QtzJXskoy1VgbjQyCJ 8
 中国毛派联合[blog, chinese:19TD692MiRRdRTuqG4WGUUeCnDMM3aSigC 10
@@ -1161,7 +1161,7 @@ ZeroNet links, resources[links, directory, search, social, guides:1Kt7xxVRcxHcK1
 doobom[chinese, doobom, blog, live, something:1DtCExJKWvNcjcPBT2HB2E659wK5EmDnin 27
 Tubes[blog, visuals, AVS, vvvv, thoughts:17F8JTNmcsFYXjqxt7DPFeoUo5qqLLvsMC 3
 TestZeroBlog[test, testing, blog, suggestions, Zeroverse, ZeroNetwork, Seeding, Installing, blogging, site creation, network, chat:1G2TYVkNJvVfmRqPtWGTLqHDUjJKMjMEBA 146
-mcjiffy's world[chinese, blog, it, mcjiffy, tech, lifestyle, world:166sh6pozauyn8GnKGPQhqcG6ebRMyu9na 79
+mcjiffy's world[chinese, blog, mcjiffy, tech, lifestyle, world:166sh6pozauyn8GnKGPQhqcG6ebRMyu9na 79
 MnNStory[单恋,15年,女同学,女生:1PVHDePkcnjaD6rxrZk2v2VaRnSuCrPwsZ 198
 assman's OneBlog[blog, aimless, procrastination:1NSPfwxq6NsSsMTBD2sjsFhq28kYQRLR16 22
 Section13[Decentralized, Gaming, Organization:1JMEAGfAygUSkEnD3WhShXCmFy368KWG6Q 117

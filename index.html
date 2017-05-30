@@ -2,12 +2,15 @@
 <head>
 <meta name="keywords" content="search, kaffie, kaffiene, find, zeronet, search engine, engine, zero, zerosearch">
 <meta charset="UTF-8">
-<!--<script type="text/javascript" src="js/all.js" async></script>-->
 <style>h1, h2, h3, h4 { font-weight: normal; font-size: 100px; margin: 0px; padding: 0px }</style>
 <script src="jquery-3.1.0.min.js"></script>
 <script src="sql.js"></script>
 <script src="marked.min.js"></script>
 <script type="text/javascript" src="ZeroFrame.js"></script>
+<title>Kaffiene</title>
+  <link rel="stylesheet" href="css/all.css" />
+</head>
+<body>
 <script>
 class Page extends ZeroFrame {}
 page = new Page();
@@ -19,6 +22,8 @@ function gup( name, url ) {
   var results = regex.exec( url );
   return results == null ? null : results[1];
 }
+
+//Proxies 1-3 are currently shown.
 var proxy1 = 'http://bit.surf:43110/'
 var proxy2 = 'https://zero.arukascloud.io/'
 var proxy3 = 'https://fuckcf.cf/'
@@ -33,12 +38,6 @@ if(window.location.hostname == "search.kaffie.bit" || window.location.hostname =
  || window.location.hostname == "zerosearch.bit" || window.location.hostname == "0search.bit")
   url = "http://zero/"
 
-</script>
-<title>Kaffiene</title>
-  <link rel="stylesheet" href="css/all.css" />
-</head>
-<body>
-<script>
 var splash=true;
 var indexsize = 0;
 var splashtext = " <a href=\"data.txt\" target='_top'>sites</a> and growing</span>";
@@ -76,6 +75,7 @@ page.cmd("fileGet", 'data.txt', function(data) {
         return;
        });
 
+//Load ZeroWiki DB.
 lastdbquery = ""
 var db = null
 var xhr = new XMLHttpRequest();
@@ -92,6 +92,8 @@ lastslug = ""
 var result = "";
 var searchterm = "";
 function searchphrase(t){}
+
+//Fetch info from ZeroWiki
 function fetchfromdb()
 {
   fetchfromdb(searchterm)
@@ -321,7 +323,7 @@ function search(){
         addrank[0] = "Me.ZeroNetwork.bit/?Profile/"+addrank[0];
         idnamearr = desc[0].split("-")
         desc[0] = idnamearr[1]
-        profilename = "<br><span class='usercertresult'>"+idnamearr[0]+"<br>Auth_Address:"+hubauth[1]+"<br>Hub:<span class=\"tag\" onclick=\"searchphrase('"+hubauth[0]+"')\">"+hubauth[0]+"</span></span>"//.replace(/@zeroid.bit/gi,"@zid").replace(/@kaffie.bit/gi,"@kfid")+"<br>"
+        profilename = "<br><span class='usercertresult'>"+idnamearr[0]+"<br>Auth_Address:"+hubauth[1]+"<br>Hub:<span class=\"tag\" onclick=\"searchphrase('"+hubauth[0]+"')\">"+hubauth[0]+"</span></span>"
       }
 
       var str = ["<div class='entry'><span class='siterank'>",addrank[1],"<br><c>peers</c></span> <span class='resentry'><a class='sitelink' href='", url, addrank[0], "' target='_top'>", desc[0], "</a> <span class='proxies'><a id='kfp' class='proxylink' href='",proxy1,addrank[0],"' target='_top'>1</a><a id='bnp' class='proxylink' href='",proxy2,addrank[0],"' target='_top'>2</a><a id='wwp' class='proxylink' href='",proxy3,addrank[0],"' target='_top'>3</a></span>", profilename, "<br><span class='tags'>", desc[1], "</span></span></div>"];
@@ -417,11 +419,9 @@ function displayResults(newpage, retmax)
   //Discover Mode / Tags
   if(zeromesearch == false)
   {
-    //$("#results").html($("#results").html().replace(/~/g,"<br><span class='tags'>"));
-  //$("#results").html($("#results").html().replace(/`/g,"</span><c><br><br></c>"));
-  var elements = document.getElementsByClassName('tags');
-  for(var e = 0; e < elements.length; e++)
-    elements[e].innerHTML = elements[e].innerHTML.replace(/ ?(.+?)(,|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1</span> ")
+    var elements = document.getElementsByClassName('tags');
+    for(var e = 0; e < elements.length; e++)
+      elements[e].innerHTML = elements[e].innerHTML.replace(/ ?(.+?)(,|$)/g, "<span class=\"tag\" onclick=\"searchphrase('$1')\">#$1</span> ")
   }
 
   if($('#pagenum') != null)
@@ -508,7 +508,7 @@ function randomsearch()
       <option value="newsites.txt">Kaffiene - Untagged</option>
       <option value="newsites.txt">Kaffiene - Full</option>
       <!--script>document.write('<option value="'+url+'1ZeroeuDnL2jNS6t1epQa1SPvC91KG8ER/data.dat">ZeroSearch</option>')</script-->
-      <script>document.write('<option value="'+url+'1f7fyxzwsz5yg7nd8sgshcweqgvdnvvqf/data.json">Bwoi</option>')</script>
+      <!--script>document.write('<option value="'+url+'1f7fyxzwsz5yg7nd8sgshcweqgvdnvvqf/data.json">Bwoi</option>')</script>-->
       <script>document.write('<option value="'+url+'1LC3ryygCrv94ZK4Nk8ELW6vE1hKwopE8T/data.txt">CensoredSearch</option>')</script>
       <script>document.write('<option value="'+url+'1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F/data/names.json">ZeroName</option>')</script>
       <option value="zeromehubs.txt">ZeroMe Hubs</option>
@@ -542,12 +542,12 @@ $('#sr').keydown(function(e){
     }, 100);
 });
 
-
+//URL Search stuff.
 var i = gup('i',location.href).replace(/%20/g, " ")
 var s = gup('q',location.href)
 if(s != null)
 {
-  $("#sr").val(decodeURIComponent(s.replace(/\+/g,  " "))); //searchphrase(decodeURIComponent(s.replace(/\+/g,  " ")));
+  $("#sr").val(decodeURIComponent(s.replace(/\+/g,  " ")));
   searchterm = $("#sr").val();
 }
 selected = document.getElementById('selectedsearch')
