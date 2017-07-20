@@ -1,4 +1,5 @@
 # -*- coding: UTF-8 -*-
+import codecs
 import sqlite3
 import json
 import re
@@ -14,14 +15,14 @@ for row in c.execute('SELECT user_name, auth_address, count(auth_address) FROM f
 	followdict[row[1]] = row[2]
 
 #Pull list of unique users
-f = open("userdata.txt","w")
+f = codecs.open("userdata.txt","w",'utf-8')
 for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM json WHERE hub IS NOT null and site==hub'):
 	if row[0]:
 		f.write(row[0])
 
 	#Name formatting/cleanup
 	if row[3]:
-		name = row[3].encode("UTF-8")
+		name = row[3]
 		name = name.replace(':','')
 		name = name.replace('[','')
 		name = name.replace(']','')
@@ -33,7 +34,7 @@ for row in c.execute('SELECT cert_user_id, hub, directory, user_name, intro FROM
 
 	#Intro formatting/cleanup
 	if row[4]:
-		intro = row[4].encode("UTF-8")
+		intro = row[4]
 		intro = re.sub(r"^Random ZeroNet user$","",intro)
 		intro = re.sub(r"^新 ZeroNet 用户$","",intro)
 		intro = re.sub(r"^Utilisateur ZeroNet aléatoire$","",intro)

@@ -9,12 +9,16 @@
    "size": 3246
   },
   "ZeroFrame.js": {
-   "sha512": "090a43d18dcd1aa836b0d160631fe958f9fabd761af712e8eed6f7e010c0dd76",
-   "size": 2409
+   "sha512": "a6bd9dc18c437b2aa375961c6948084daacae03ea81e4ba9e6ff157406d19452",
+   "size": 2436
   },
   "autotag.py": {
    "sha512": "a8ee8701fb5528882564a1bbf433b2a70c6fa5b3b512b581fb744a269325f0b1",
    "size": 3395
+  },
+  "base64-binary.js": {
+   "sha512": "1937a792fc271fd6018637f670c4d306c37685eac63447424633572f512e9595",
+   "size": 3274
   },
   "check.py": {
    "sha512": "db7d66aff3c6b9a3fa6fde7b8561228b3433f6a96df6537358f0edbc16008f2e",
@@ -29,16 +33,16 @@
    "size": 106453
   },
   "followers.txt": {
-   "sha512": "9266f0f3341ac2856eecbf54c6968fe4af1b74013a6f5ebf7d829569957a8749",
-   "size": 75821
+   "sha512": "9a441bf3c706030062fa04aa164fce51713272a11be40c5ef579dc731c255150",
+   "size": 82944
   },
   "grab.py": {
    "sha512": "f97b2e8fd1b24a5016417e9a0a59a1cfb63ac32a0f1ba9e41d60191efc19ba87",
    "size": 1605
   },
   "index.html": {
-   "sha512": "09fe75f994f2f45167b6080f25adac3f1d6b1ca99094226fb5d52e3f909fee2a",
-   "size": 17839
+   "sha512": "fb2a800b9c4fd171d44ff679584692523ee4d6e2388e22998e54031707282f33",
+   "size": 19501
   },
   "install.html": {
    "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
@@ -77,8 +81,8 @@
    "size": 2095288
   },
   "userdata.txt": {
-   "sha512": "e72bc1d346da53b0b3c2df62dd43302c248df195e6fa9b2dc4470924c65ba810",
-   "size": 915998
+   "sha512": "74282ce39d35739df3f01bd15605f72a03f475362bc2dbb1789e9b49173f98f9",
+   "size": 1177151
   },
   "zeromefollow.py": {
    "sha512": "65d30b818cbaf87388bbdfafda130fdb7ad458c1d007189b878c998a369b5576",
@@ -89,24 +93,20 @@
    "size": 1380
   },
   "zeromeusers.py": {
-   "sha512": "b586af6f5b1d112ccb858e1e2b61fdbf83d095e0d54bb014315ff0e407f3baa7",
-   "size": 1791
+   "sha512": "f42f339a4b4a07c674cbe79656e7cac1ed9c94b215b0040f43fe8a3e6ac3b909",
+   "size": 1788
   }
  },
  "ignore": "(.git|data/.*db|data/users/.*/.*)",
  "includes": {},
  "inner_path": "content.json",
- "modified": 1496127617,
+ "modified": 1500516862,
  "postmessage_nonce_security": true,
- "sign": [
-  17733177830829120693725517500017423056051272732353401365135028461034218379441,
-  78411839211050014755823297835905112876010028614139683645157575683609025333239
- ],
  "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
  "signs": {
-  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "G8fa1WDrGVAD1uGatUVQotq9+wCsHe8lmJOMkK1kl8ueDo4oDiA4siRQM/98WhJo8spPLz/0K0Tk1rwatmW9OLY="
+  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HHj5X194XAKZ0/KpYcEb7Zod1UIqbOASZs0pq3kh+A0lGdPNC/NjRDd/RZpRmZUE/5QRAiPH0ISRGpKpY8rd77Y="
  },
  "signs_required": 1,
  "title": "Kaffiene Search",
- "zeronet_version": "0.5.5"
+ "zeronet_version": "0.5.7"
 }

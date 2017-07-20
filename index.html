@@ -7,13 +7,55 @@
 <script src="sql.js"></script>
 <script src="marked.min.js"></script>
 <script type="text/javascript" src="ZeroFrame.js"></script>
+<script src="base64-binary.js"></script>
 <title>Kaffiene</title>
   <link rel="stylesheet" href="css/all.css" />
 </head>
 <body>
 <script>
-class Page extends ZeroFrame {}
-page = new Page();
+class Page extends ZeroFrame
+{
+  onRequest(cmd, message) {
+    if (cmd == "setSiteInfo")
+      this.siteinfo = message.params;
+    else
+      this.log("Unknown incoming message:", cmd)
+  }
+}
+var page = new Page();
+page.cmd("siteInfo", [], (function(page) {
+  return function(site_info) {
+            page.siteinfo = site_info
+            console.log(page)
+            if(page.siteinfo.settings.permissions.indexOf("Cors:138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP") < 0)
+            {
+              page.cmd("corsPermission", "138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP", function()
+                {
+                   page.cmd("fileGet",
+                   {
+                      "inner_path": 'cors-138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/data/ZeroWiki.db',
+                      "format": 'base64'
+                    }, function(data) {
+                    var uInt8Array = new Uint8Array(Base64Binary.decodeArrayBuffer(data));
+                    db = new SQL.Database(uInt8Array);
+                    fetchfromdb(lastdbquery)
+                    });
+                });
+            }else
+            {
+              page.cmd("fileGet",
+                 {
+                    "inner_path": 'cors-138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/data/ZeroWiki.db',
+                    "format": 'base64'
+                  }, function(data) {
+                  var uInt8Array = new Uint8Array(Base64Binary.decodeArrayBuffer(data));
+                  db = new SQL.Database(uInt8Array);
+                  fetchfromdb(lastdbquery)
+                  });
+            }
+        }
+})(page));
+
 function gup( name, url ) {
   if (!url) url = location.href;
   name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
@@ -47,7 +89,6 @@ var zeromesearch = false;
 //Grab the site information from data.txt.
 var datau;
 var datab;
-var xmlhttp;
 page.cmd("fileGet", 'data.txt', function(data) {
         datab=data.split("\n");
         if(sname == "Kaffiene")
@@ -75,19 +116,11 @@ page.cmd("fileGet", 'data.txt', function(data) {
         return;
        });
 
+
+
 //Load ZeroWiki DB.
 lastdbquery = ""
 var db = null
-var xhr = new XMLHttpRequest();
-  xhr.open('GET', url+'138R53t3ZW7KDfSfxVpWUsMXgwUnsDNXLP/data/ZeroWiki.db', true);
-  xhr.responseType = 'arraybuffer';
-  xhr.onload = function(e) {
-    var uInt8Array = new Uint8Array(this.response);
-    db = new SQL.Database(uInt8Array);
-    fetchfromdb(lastdbquery)
-  };
-  xhr.send();
-
 lastslug = ""
 var result = "";
 var searchterm = "";
@@ -100,6 +133,9 @@ function fetchfromdb()
 }
 function fetchfromdb(query)
 {
+  if(db == null)
+    return;
+
   query = query.toLowerCase()
   if(query == "proxy")
     query = "proxies"
@@ -204,23 +240,34 @@ function selectSearch(selected, u = "") {
     if(sname == "followers.txt")
       zeromesearch = true;
 
+    page = new Page();
     if (sname == "Kaffiene")
     {
-      if(datab != null)
-      {
-        datau = datab;
-        $('#curindex').html(datau.length + splashtext);
-        search();
-        lastslug="";
-        fetchfromdb(searchterm);
-      }
+        page.cmd("fileGet", 'data.txt', function(data) {
+          datab=data.split("\n");
+          datau=datab;
+          indexsize = datau.length;
+          curindex = document.getElementById('curindex')
+          if(curindex)
+            curindex.innerHTML = indexsize + splashtext;
+          if(searchterm != "")
+          {
+            search()
+            lastslug="";
+            fetchfromdb(searchterm);
+          }
+        });
       return;
     }
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", loadurl, true);
-    xhr.responseType = "text";
-    xhr.onload = function(event) {
-        rt = xhr.responseText
+    //var xhr = new XMLHttpRequest();
+    //xhr.open("GET", loadurl, true);
+    //xhr.responseType = "text";
+    
+    page.cmd("fileGet", loadurl, function(data) {
+    //}
+    //xhr.onload = function(event) {
+        console.log("Loaded");
+        rt = data
         rt = rt.replace(/",/g, "")
         rt = rt.replace(/"/g, "")
         rt = rt.replace(/\{/g, "")
@@ -248,8 +295,8 @@ function selectSearch(selected, u = "") {
         search();
         lastslug="";
         fetchfromdb(searchterm);
-    };
-    xhr.send();
+    });
+    //xhr.send();
 }
 
 
@@ -509,8 +556,8 @@ function randomsearch()
       <option value="newsites.txt">Kaffiene - Full</option>
       <!--script>document.write('<option value="'+url+'1ZeroeuDnL2jNS6t1epQa1SPvC91KG8ER/data.dat">ZeroSearch</option>')</script-->
       <!--script>document.write('<option value="'+url+'1f7fyxzwsz5yg7nd8sgshcweqgvdnvvqf/data.json">Bwoi</option>')</script>-->
-      <script>document.write('<option value="'+url+'1LC3ryygCrv94ZK4Nk8ELW6vE1hKwopE8T/data.txt">CensoredSearch</option>')</script>
-      <script>document.write('<option value="'+url+'1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F/data/names.json">ZeroName</option>')</script>
+      <!--script>document.write('<option value="'+url+'1LC3ryygCrv94ZK4Nk8ELW6vE1hKwopE8T/data.txt">CensoredSearch</option>')</script-->
+      <!--script>document.write('<option value="'+url+'1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F/data/names.json">ZeroName</option>')</script-->
       <option value="zeromehubs.txt">ZeroMe Hubs</option>
       <option value="userdata.txt">ZeroMe Users</option>
       <option value="externalsource">Custom/Other</option>

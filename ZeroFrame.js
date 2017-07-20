@@ -10,6 +10,7 @@ class ZeroFrame {
     constructor(url) {
         this.url = url
         this.waiting_cb = {}
+        this.siteinfo = {}
         this.wrapper_nonce = document.location.href.replace(/.*wrapper_nonce=([A-Za-z0-9]+).*/, "$1")
         this.connect()
         this.next_message_id = 1
