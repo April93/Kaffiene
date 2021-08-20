@@ -2,7 +2,7 @@
  "address": "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba",
  "cloneable": true,
  "description": "Caffeinated Search & Index",
- "domain": "kaffiene.bit",
+ "domain": "",
  "files": {
   "README.md": {
    "sha512": "665a080cfa12af2609a734f1e897a51e15e8af0625b22a2141b1be3701422861",
@@ -41,8 +41,8 @@
    "size": 1605
   },
   "index.html": {
-   "sha512": "fb2a800b9c4fd171d44ff679584692523ee4d6e2388e22998e54031707282f33",
-   "size": 19501
+   "sha512": "ad8d5270c0c99e45439c5e5d80246c9edfc469c412465b8f096b2d17a17d1b31",
+   "size": 18102
   },
   "install.html": {
    "sha512": "3f2818d2b03fc1fb4d5b336748223defd8f8039be85711f6ffb955dc1e327548",
@@ -72,6 +72,10 @@
    "sha512": "667c90bf56e6b3aeb9fd0a004a0f19087d588ff4534a5e802d1cfcae6fa3c2f5",
    "size": 1550
   },
+  "old.html": {
+   "sha512": "42fe3359d5a31ed6bd4b2ace63abde85b5185c273b156863e187dea121ecfc5b",
+   "size": 19644
+  },
   "opensearch.xml": {
    "sha512": "2e0069e762a84916c51ca90749aadd1762f7c98048fda9300e13d6e4476f1cea",
    "size": 439
@@ -81,8 +85,8 @@
    "size": 2095288
   },
   "userdata.txt": {
-   "sha512": "74282ce39d35739df3f01bd15605f72a03f475362bc2dbb1789e9b49173f98f9",
-   "size": 1177151
+   "sha512": "c3b05839eadde87fa3fcef7c6d6c07f27cad081695eafb1c5d03db7e0c501ca9",
+   "size": 2238265
   },
   "zeromefollow.py": {
    "sha512": "65d30b818cbaf87388bbdfafda130fdb7ad458c1d007189b878c998a369b5576",
@@ -100,13 +104,11 @@
  "ignore": "(.git|data/.*db|data/users/.*/.*)",
  "includes": {},
  "inner_path": "content.json",
- "modified": 1500516862,
+ "modified": 1629440048,
  "postmessage_nonce_security": true,
  "signers_sign": "HGJrwCVkPvNIYzde/BrmmryvYyqcB82sZg3Is0CcesMkDdRg/KHr7bsvCtmxKb7eXFC24yAetYNiBejBndMSADk=",
- "signs": {
-  "1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HHj5X194XAKZ0/KpYcEb7Zod1UIqbOASZs0pq3kh+A0lGdPNC/NjRDd/RZpRmZUE/5QRAiPH0ISRGpKpY8rd77Y="
- },
+ "signs": {"1Mr5rX9TauvaGReB4RjCaE6D37FJQaY5Ba": "HMaGUg2wnoQ9EhwlE0Wx5Pf7NRHkxliMyp/DeLFfESCAUIinAaKu6mcCUo/7nWWMXhzC7LmZAqRRSZk9fRp/7Yc="},
  "signs_required": 1,
  "title": "Kaffiene Search",
- "zeronet_version": "0.5.7"
+ "zeronet_version": "0.7.2"
 }
